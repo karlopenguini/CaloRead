@@ -64,6 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textFontWeight="200"
+                    android:textColor="@color/colorSpanishVeridian"
                     android:id="@+id/TV_UsernameLbl"/>
                 <EditText
                     android:layout_width="match_parent"
@@ -71,6 +72,7 @@
                     android:inputType="text"
                     android:textFontWeight="200"
                     android:maxLines="1"
+                    android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
                     android:id="@+id/ET_Username"/>
             </LinearLayout>
@@ -94,6 +96,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:textFontWeight="200"
+                    android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
                     android:id="@+id/ET_Password"/>
             </LinearLayout>
