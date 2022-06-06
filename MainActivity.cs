@@ -1,8 +1,9 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
+using Android.Widget;
 using AndroidX.AppCompat.App;
-
+using Android.Content;
 
 namespace CaloRead
 {
@@ -16,6 +17,12 @@ namespace CaloRead
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Login);
+            var btn = FindViewById<Button>(Resource.Id.BTN_Register);
+            btn.Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(RegisterCalorieGoal));
+                StartActivity(intent);
+            };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

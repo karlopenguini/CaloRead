@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CaloRead.Activities.RegistrationActivities
+namespace CaloRead
 {
     [Activity(Label = "Register1")]
     public class RegisterUserData : Activity

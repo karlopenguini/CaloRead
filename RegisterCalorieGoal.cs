@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CaloRead.Activities.RegistrationActivities
+namespace CaloRead
 {
     [Activity(Label = "Register2")]
     public class RegisterCalorieGoal : Activity
@@ -17,7 +17,7 @@ namespace CaloRead.Activities.RegistrationActivities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.RegisterUserData);
             // Create your application here
         }
     }
