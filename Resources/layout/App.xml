@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/round_corner"
+        android:gravity="center"
+        android:id="@+id/header">
+        <TextView
+            android:text="Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="24dp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:id="@+id/header_label" />
+        <ImageButton
+            android:src="@drawable/Calendar"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_height="match_parent"
+            android:id="@+id/BTN_Calendar" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_above="@id/navbar"
+        android:id="@+id/main_frame_scroll"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_container"/>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:id="@+id/navbar"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border">
+        <ImageButton
+            android:src="@drawable/Diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:id="@+id/BTN_Diary" />
+        <ImageButton
+            android:src="@drawable/Food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="42dp"
+            android:layout_marginLeft="42dp"
+            android:background="@android:color/transparent"
+            android:id="@+id/BTN_Food" />
+        <ImageButton
+            android:src="@drawable/Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:id="@+id/BTN_Profile" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
