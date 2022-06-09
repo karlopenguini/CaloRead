@@ -28,13 +28,11 @@
             android:background="@android:color/transparent"
             android:layout_height="match_parent"
             android:id="@+id/BTN_Calendar" />
-
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_above="@id/navbar"
+        android:layout_alignParentTop="true"
         android:id="@+id/main_frame_scroll"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
