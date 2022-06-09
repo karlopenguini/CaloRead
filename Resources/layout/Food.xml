@@ -13,9 +13,9 @@
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/LL_Container">
 
         <TextView
             android:text="My Food Data"
@@ -24,6 +24,28 @@
             android:textColor="@color/colorSpanishVeridian"
             android:textSize="32dp" />
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="10dp"
+            android:id="@+id/LL_Nutritional"
+            android:background="@drawable/rounded_beige_container"
+            android:gravity="center">
+
+            <TextView
+                android:text="ADD FOOD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40px"
+                android:textFontWeight="200"
+                android:gravity="center"
+                android:textColor="@color/colorSpanishVeridian"
+                android:id="@+id/TV_kcalLbl"/>
+
+        </LinearLayout>
     </LinearLayout>
 
 
