@@ -19,6 +19,7 @@ namespace CaloRead
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
+
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

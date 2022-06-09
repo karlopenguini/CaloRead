@@ -15,8 +15,11 @@ namespace CaloRead
     [Activity(Label = "App")]
     public class App : AppCompatActivity
     {
+        public int age = 12;
+        public LinearLayout header;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
             // Create your application here

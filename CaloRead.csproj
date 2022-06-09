@@ -108,7 +108,7 @@
     <AndroidResource Include="Resources\layout\Login.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\RegisterUserData.xml">
+    <AndroidResource Include="Resources\layout\RegisterCalorieGoal.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -151,6 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Profile.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\RegisterUserData.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

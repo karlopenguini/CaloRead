@@ -20,7 +20,7 @@ namespace CaloRead
             var btn = FindViewById<Button>(Resource.Id.BTN_Register);
             btn.Click += (s, e) =>
             {
-                Intent intent = new Intent(this, typeof(RegisterCalorieGoal));
+                Intent intent = new Intent(this, typeof(RegisterUserData));
                 StartActivity(intent);
             };
         }

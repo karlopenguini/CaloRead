@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/LL_Main"
+    android:paddingHorizontal="20dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="140dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity=""
+            android:layout_marginBottom="50dp"
+            android:clipChildren="true"
+            android:id="@+id/LL_Desc">
+            <TextView
+                android:text="Your Basal Metabolic Rate (BMR) is"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSpanishVeridian"
+                android:textSize="32dp"
+                android:id="@+id/textView1" />
+            <TextView
+                android:text="2200 kcal."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBitterLemon"
+                android:textSize="32dp"
+                android:id="@+id/textView2" />
+            <TextView
+                android:text="What’s your calorie goal?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSpanishVeridian"
+                android:textSize="32dp"
+                android:id="@+id/textView3" />
+        </LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
+            android:id="@+id/ET_CalorieGoal"
+            android:textColor="@color/colorSpanishVeridian"
+            android:backgroundTint="@color/colorSpanishVeridian"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp">
+
+        <ImageButton
+            android:src="@drawable/ArrowCircleLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_GoBack"
+            android:background="@android:color/transparent"
+            android:layout_alignParentLeft="true"/>
+        
+        <ImageButton
+            android:src="@drawable/ArrowCircleRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_ConfirmRegistration"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
