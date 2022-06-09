@@ -24,7 +24,7 @@ namespace CaloRead
             SetContentView(Resource.Layout.App);
             // Create your application here
             var diary = new Diary();
-            var food = new Food();
+            var food = new AddFood(); 
             var profile = new Profile();
             ChangeFragment(diary);
 

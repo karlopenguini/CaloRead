@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/RL_Arrow"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="70dp">
         <ImageButton
             android:src="@drawable/ArrowCircleLeft"
             android:layout_width="120px"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LL_Container"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="120dp">
 
         <TextView
             android:text="Nutrition"
@@ -224,7 +224,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/LL_Buttons">
             <Button
                 android:text="UPDATE"
