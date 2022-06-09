@@ -115,33 +115,137 @@
                     android:id="@+id/RL_FoodInfo">
 
                     <TextView
-                        android:text="Food Name"
+                        android:text="50g"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textSize="40px"
+                        android:textSize="35px"
                         android:textFontWeight="200"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="20dp"
                         android:textColor="@android:color/white"
-                        android:id="@+id/TV_Name"
+                        android:id="@+id/TV_Grams"
                         android:gravity="center" />
 
-                    <TextView
-                        android:text="100 kcal"
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textSize="40px"
-                        android:textFontWeight="200"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="20dp"
-                        android:textColor="@android:color/white"
-                        android:id="@+id/TV_kcal"
-                        android:gravity="center" />
+                        android:id="@+id/LL_Nutrition"
+                        android:gravity="center|right">>
 
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/LL_Protein"
+                            android:gravity="center|right">
+
+                            <TextView
+                            android:text="50g"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_ProteinGrams"
+                            android:gravity="center" />
+
+                            <TextView
+                            android:text="PROTEIN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_ProteinLbl"
+                            android:gravity="center" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/LL_Carbs"
+                            android:gravity="center|right">
+
+                            <TextView
+                            android:text="50g"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_CarbsGrams"
+                            android:gravity="center" />
+
+                            <TextView
+                            android:text="CARBS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_CarbsLbl"
+                            android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/LL_Fat"
+                            android:gravity="center|right">
+
+                            <TextView
+                            android:text="50g"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_FatGrams"
+                            android:gravity="center" />
+
+                            <TextView
+                            android:text="FAT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="35px"
+                            android:textFontWeight="200"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:id="@+id/TV_FatLbl"
+                            android:gravity="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </RelativeLayout>
-
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>
