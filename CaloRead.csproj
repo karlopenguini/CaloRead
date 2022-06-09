@@ -61,18 +61,18 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Main\Food\AddFood.cs" />
-    <Compile Include="UI\Main\App.cs" />
-    <Compile Include="UI\Main\Diary\Diary.cs" />
-    <Compile Include="UI\Main\Diary\Meal.cs" />
-    <Compile Include="UI\Main\Diary\AddMeal.cs" />
-    <Compile Include="UI\Main\Diary\EditMeal.cs" />
-    <Compile Include="UI\Main\Food\EditFood.cs" />
-    <Compile Include="UI\Main\Food\Food.cs" />
-    <Compile Include="UI\Init\MainActivity.cs" />
-    <Compile Include="UI\Main\Profile\Profile.cs" />
-    <Compile Include="UI\Init\RegisterUserData.cs" />
-    <Compile Include="UI\Init\RegisterCalorieGoal.cs" />
+    <Compile Include="Code\Main\Food\AddFood.cs" />
+    <Compile Include="Code\Main\App.cs" />
+    <Compile Include="Code\Main\Diary\Diary.cs" />
+    <Compile Include="Code\Main\Diary\Meal.cs" />
+    <Compile Include="Code\Main\Diary\AddMeal.cs" />
+    <Compile Include="Code\Main\Diary\EditMeal.cs" />
+    <Compile Include="Code\Main\Food\EditFood.cs" />
+    <Compile Include="Code\Main\Food\Food.cs" />
+    <Compile Include="Code\Init\MainActivity.cs" />
+    <Compile Include="Code\Main\Profile\Profile.cs" />
+    <Compile Include="Code\Init\RegisterUserData.cs" />
+    <Compile Include="Code\Init\RegisterCalorieGoal.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,7 +184,11 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Meal.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

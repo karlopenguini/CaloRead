@@ -16,6 +16,7 @@ namespace CaloRead
     public class App : AppCompatActivity
     {
         public int age = 12;
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             

@@ -12,13 +12,14 @@ using System.Text;
 
 namespace CaloRead
 {
-    public class AddFood : AndroidX.Fragment.App.Fragment
+    public class Profile : AndroidX.Fragment.App.Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
+            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -26,7 +27,11 @@ namespace CaloRead
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+            var activty = Activity as App;
+            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Invisible;
+
+            View view = inflater.Inflate(Resource.Layout.Profile, container, false);
+            return view;
         }
     }
 }
