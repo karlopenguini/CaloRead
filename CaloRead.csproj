@@ -190,6 +190,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\rounded_beige_container.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\Nutrition_Border.xml" />
   </ItemGroup>
   <ItemGroup>
