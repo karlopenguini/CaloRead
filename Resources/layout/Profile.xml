@@ -41,11 +41,22 @@
             android:gravity="center|right">
 
             <ImageButton
-                android:src="@drawable/ArrowCircleLeft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/BTN_GoBack"
+                android:src="@drawable/Check"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/BTN_Confirm"
+                android:layout_marginRight="10dp"
                 android:background="@android:color/transparent"/>
+
+            <ImageButton
+                android:src="@drawable/Cross"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:id="@+id/BTN_Cancel"
+                android:background="@android:color/transparent"/>
+
         </LinearLayout>
 
         <LinearLayout
