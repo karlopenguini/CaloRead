@@ -31,16 +31,23 @@
             android:textColor="@color/colorBitterLemon"
             android:textSize="32dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LL_Buttons"
-            android:gravity="center|right">
+            android:id="@+id/RL_FoodInfo">
 
-            <ImageButton
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/LL_UpdateButtons">
+
+                <ImageButton
                 android:src="@drawable/Check"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -48,25 +55,26 @@
                 android:id="@+id/BTN_Confirm"
                 android:background="@android:color/transparent"/>
 
-            <ImageButton
-                android:src="@drawable/Cross"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:layout_marginRight="10dp"
-                android:id="@+id/BTN_Cancel"
-                android:background="@android:color/transparent"/>
+                <ImageButton
+                    android:src="@drawable/Cross"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/BTN_Cancel"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
 
             <ImageButton
                 android:src="@drawable/editpencil"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_alignParentRight="true"
                 android:id="@+id/BTN_Edit"
-                android:layout_marginRight="10dp"
                 android:background="@android:color/transparent"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:orientation="vertical"
