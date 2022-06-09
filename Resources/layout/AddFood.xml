@@ -18,8 +18,8 @@
         android:layout_marginTop="30dp">
         <ImageButton
             android:src="@drawable/ArrowCircleLeft"
-            android:layout_width="90px"
-            android:layout_height="90px"
+            android:layout_width="120px"
+            android:layout_height="120px"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
             android:id="@+id/BTN_GoBack"
@@ -57,7 +57,7 @@
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="150px"
+                android:layout_width="200px"
                 android:layout_height="180px"
                 android:id="@+id/LL_kcal"
                 android:gravity="center"
@@ -85,8 +85,8 @@
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
+                android:layout_width="200px"
+                android:layout_height="180px"
                 android:id="@+id/LL_Protein"
                 android:gravity="center"
                 android:layout_marginRight="2dp">
@@ -113,8 +113,8 @@
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
+                android:layout_width="200px"
+                android:layout_height="180px"
                 android:id="@+id/LL_Carbs"
                 android:gravity="center"
                 android:layout_marginRight="2dp">
@@ -141,8 +141,8 @@
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
+                android:layout_width="200px"
+                android:layout_height="180px"
                 android:id="@+id/LL_Fats"
                 android:gravity="center">
                 <TextView
@@ -196,7 +196,7 @@
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:id="@+id/LL_Grams">
@@ -224,13 +224,13 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:id="@+id/LL_Buttons">
             <Button
                 android:text="UPDATE"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:id="@+id/BTN_SignIn"
+                android:id="@+id/BTN_Update"
                 android:layout_marginBottom="6dp"
                 android:textSize="20dp"
                 android:textFontWeight="200"
@@ -244,7 +244,7 @@
                 android:textFontWeight="200"
                 android:background="#B95218"
                 android:textColor="@android:color/white"
-                android:id="@+id/BTN_Register" />
+                android:id="@+id/BTN_Remove" />
         </LinearLayout>
     </LinearLayout>
 
