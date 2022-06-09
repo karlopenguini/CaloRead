@@ -30,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="100px"
             android:layout_marginTop="10dp"
-            android:id="@+id/LL_Nutritional"
+            android:id="@+id/LL_Add_Food"
+            android:clickable="true"
             android:background="@drawable/add_food_container">
 
             <TextView
@@ -57,7 +58,6 @@
                 android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
-
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
@@ -66,7 +66,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/LL_Food">
-
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"

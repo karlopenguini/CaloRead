@@ -33,5 +33,6 @@ namespace CaloRead
             View view = inflater.Inflate(Resource.Layout.Profile, container, false);
             return view;
         }
+
     }
 }

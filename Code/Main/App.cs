@@ -31,13 +31,6 @@ namespace CaloRead
 
             _dateDisplay = FindViewById<TextView>(Resource.Id.header_label);
 
-            var btnCalendar = FindViewById<ImageButton>(Resource.Id.BTN_Calendar);
-            btnCalendar.Click += delegate
-            {
-                
-            };
-
-
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
             btnDiary.Click += (s, e) =>
             {
