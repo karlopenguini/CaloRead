@@ -25,162 +25,162 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBitterLemon"
             android:textSize="32dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LL_Container">
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:id="@+id/LL_Credentials">
+            android:layout_marginTop="30dp"
+            android:id="@+id/LL_Container">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LL_Username"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:text="USERNAME"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textFontWeight="200"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/TV_UsernameLbl"/>
-                <EditText
+                android:layout_marginBottom="36dp"
+                android:id="@+id/LL_Credentials">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textFontWeight="200"
-                    android:maxLines="1"
-                    android:backgroundTint="@color/colorSpanishVeridian"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Username"/>
+                    android:id="@+id/LL_Username"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:text="USERNAME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_UsernameLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textFontWeight="200"
+                        android:maxLines="1"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Username"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LL_Password">
+                    <TextView
+                        android:text="PASSWORD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_PasswordLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Password"/>
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LL_Password">
-                <TextView
-                    android:text="PASSWORD"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textFontWeight="200"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/TV_PasswordLbl"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textFontWeight="200"
-                    android:backgroundTint="@color/colorSpanishVeridian"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Password"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/LL_Data"
-            android:gravity="center">
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
-                android:id="@+id/LL_Weight"
-                android:gravity="center|top"
-                android:layout_marginRight="35dp">
-                <TextView
-                    android:text="WEIGHT (KG)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textFontWeight="200"
-                    android:gravity="center"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/TV_WeightLBL"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textFontWeight="200"
-                    android:backgroundTint="@color/colorSpanishVeridian"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Weight"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
-                android:id="@+id/LL_Height"
-                android:gravity="center|top"
-                android:layout_marginRight="35dp">
-                <TextView
-                    android:text="HEIGHT (CM)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textFontWeight="200"
-                    android:gravity="center"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/TV_HeightLbl"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textFontWeight="200"
-                    android:backgroundTint="@color/colorSpanishVeridian"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Height"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="150px"
-                android:layout_height="200px"
-                android:id="@+id/LL_Gender"
-                android:gravity="center|top"
-                >
-                <TextView
-                    android:text="GENDER"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textFontWeight="200"
-                    android:gravity="center"
-                    android:layout_marginBottom="16.5dp"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/TV_GenderLbl"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textFontWeight="200"
-                    android:backgroundTint="@color/colorSpanishVeridian"
-                    android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Gender"/>
+                android:id="@+id/LL_Data"
+                android:gravity="center">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Weight"
+                    android:gravity="center|top"
+                    android:layout_marginRight="35dp">
+                    <TextView
+                        android:text="WEIGHT (KG)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_WeightLBL"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Weight"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Height"
+                    android:gravity="center|top"
+                    android:layout_marginRight="35dp">
+                    <TextView
+                        android:text="HEIGHT (CM)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_HeightLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Height"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Gender"
+                    android:gravity="center|top"
+                    >
+                    <TextView
+                        android:text="GENDER"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:layout_marginBottom="16.5dp"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_GenderLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Gender"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -192,7 +192,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tableRow1"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="35dp">
+        android:layout_marginBottom="30dp">
 
         <ImageButton
             android:src="@drawable/ArrowCircleRight"
@@ -202,4 +202,5 @@
             android:background="@android:color/transparent"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
+
 </LinearLayout>
