@@ -1,15 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="75dp">
-    <TextView
-        android:text="Diary"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
+        android:id="@+id/LL_Nutrition_Diary">
+        <TextView
+            android:text="Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:textFontWeight="900"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/colorSpanishVeridian"
+            android:id="@+id/TV_Nutrition" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/nutrition_border"
+            android:id="@+id/LL_Calories_Diary">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Calorie_Goal_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Calorie_Goal_Container">
+                    <TextView
+                        android:text="2800 "
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorDarkGreen"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Goal_Calorie" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Goal_Calorie_kcal" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:text="GOAL"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Goal_Calorie_kcal" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <TextView
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="20dp"
+                android:text="-"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TV_Subtract_Diary" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/LL_Calorie_Intake_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Calorie_Intake_Container">
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="20dp"
+                        android:text="2330 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Intake_Calorie" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Intake_Calorie_kcal" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:textSize="14dp"
+                    android:text="INTAKE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Intake_Calorie_kcal" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <TextView
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="20dp"
+                android:text="="
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TV_Eqal_Diary" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/LL_Calorie_Deficit_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Calorie_Deficit_Container">
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="20dp"
+                        android:text="440 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Deficit_Calorie" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Deficit_Calorie_kcal" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:textSize="14dp"
+                    android:text="DEFICIT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Deficit_Calorie_kcal" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/macros_border"
+            android:id="@+id/LL_Macros_Diary">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Protein_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Protein_Container">
+                    <TextView
+                        android:text="40 "
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorDarkGreen"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Protein" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Protein_Percent" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:text="PROTEIN"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Protein_Label" />
+            </LinearLayout>
+
+
+
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/LL_Carbs_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Carbs_Container">
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="20dp"
+                        android:text="24 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Carbs" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Carbs_Percent" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:textSize="14dp"
+                    android:text="CARBS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Carbs_Label" />
+            </LinearLayout>
+
+
+
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/LL_Fat_Diary">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:id="@+id/LL_Fat_Container">
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="20dp"
+                        android:text="32 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Fat" />
+                    <TextView
+                        android:textColor="@color/colorDarkGreen"
+                        android:textSize="10dp"
+                        android:text="%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TV_Fat_Percent" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorAppleGreen"
+                    android:textSize="14dp"
+                    android:text="FAT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Fat_Label" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/textView1" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Meals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:textFontWeight="900"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/colorSpanishVeridian"
+            android:id="@+id/TV_Meals" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LL_Meals">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Breakfast"
+                android:background="@drawable/meal_background"
+                android:clickable="true"
+                android:gravity="center">
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:text="BREAKFAST"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Breakfast" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <TextView
+                    android:textSize="16dp"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="296 KCAL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Calories_Breakfast" />
+
+                <ImageView
+                    android:src="@drawable/chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView1" />
+
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Lunch"
+                android:background="@drawable/meal_background"
+                android:clickable="true"
+                android:layout_marginVertical="8dp"
+                android:gravity="center">
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:text="LUNCH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_LUNCH" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <TextView
+                    android:textSize="16dp"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="296 KCAL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Calories_Lunch" />
+
+                <ImageView
+                    android:src="@drawable/chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3" />
+
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Dinner"
+                android:background="@drawable/meal_background"
+                android:clickable="true"
+                android:gravity="center">
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:text="Dinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Dinner" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <TextView
+                    android:textSize="16dp"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="296 KCAL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TV_Calories_Dinner" />
+
+                <ImageView
+                    android:src="@drawable/chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </LinearLayout>
