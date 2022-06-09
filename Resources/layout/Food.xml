@@ -72,24 +72,25 @@
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
                 android:background="@drawable/food_card"
                 android:id="@+id/LL_FoodCard">
                 <RelativeLayout
                     android:minWidth="25px"
                     android:minHeight="25px"
                     android:layout_width="match_parent"
-                    android:layout_height="100px"
+                    android:layout_height="wrap_content"
                     android:id="@+id/RL_FoodNameCal">
 
                     <TextView
                         android:text="Food Name"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:textSize="40px"
                         android:textFontWeight="200"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="20dp"
                         android:textColor="@color/colorBitterLemon"
                         android:id="@+id/TV_Name"
                         android:gravity="center" />
@@ -97,11 +98,10 @@
                     <TextView
                         android:text="100 kcal"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:textSize="40px"
                         android:textFontWeight="200"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="20dp"
                         android:textColor="@color/colorBitterLemon"
                         android:id="@+id/TV_kcal"
                         android:gravity="center" />
@@ -111,20 +111,19 @@
                     android:minWidth="25px"
                     android:minHeight="25px"
                     android:layout_width="match_parent"
-                    android:layout_height="100px"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:id="@+id/RL_FoodInfo">
 
                     <TextView
                         android:text="50g"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:textSize="35px"
                         android:textFontWeight="200"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
                         android:textColor="@android:color/white"
-                        android:id="@+id/TV_Grams"
-                        android:gravity="center" />
+                        android:id="@+id/TV_Grams" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -133,7 +132,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="20dp"
                         android:id="@+id/LL_Nutrition"
                         android:gravity="center|right">>
 
@@ -150,11 +148,10 @@
                             <TextView
                             android:text="50g"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="20dp"
                             android:textColor="@android:color/white"
                             android:id="@+id/TV_ProteinGrams"
                             android:gravity="center" />
@@ -162,11 +159,10 @@
                             <TextView
                             android:text="PROTEIN"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="20dp"
                             android:textColor="@android:color/white"
                             android:id="@+id/TV_ProteinLbl"
                             android:gravity="center" />
@@ -186,7 +182,7 @@
                             <TextView
                             android:text="50g"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
@@ -198,7 +194,7 @@
                             <TextView
                             android:text="CARBS"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
@@ -221,7 +217,7 @@
                             <TextView
                             android:text="50g"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
@@ -233,7 +229,7 @@
                             <TextView
                             android:text="FAT"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textSize="35px"
                             android:textFontWeight="200"
                             android:layout_alignParentLeft="true"
