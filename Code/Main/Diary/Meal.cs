@@ -25,6 +25,9 @@ namespace CaloRead
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            var activty = Activity as App;
+            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
+            activty.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Invisible;
 
             View view = inflater.Inflate(Resource.Layout.Meal, container, false);
             return view;
