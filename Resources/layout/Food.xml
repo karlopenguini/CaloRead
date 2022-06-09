@@ -46,13 +46,17 @@
                 android:gravity="center" />
 
             <ImageButton
-                android:src="@drawable/ArrowCircleRight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:src="@drawable/addpluscircle"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:id="@+id/BTN_ConfirmRegistration"
                 android:background="@android:color/transparent"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
+
     </LinearLayout>
 
 
