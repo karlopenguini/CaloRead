@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.AppCompat.App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Text;
 namespace CaloRead
 {
     [Activity(Label = "Register1")]
-    public class RegisterUserData : Activity
+    public class RegisterUserData : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

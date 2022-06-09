@@ -16,7 +16,6 @@ namespace CaloRead
     public class App : AppCompatActivity
     {
         public int age = 12;
-        public LinearLayout header;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             
@@ -27,8 +26,6 @@ namespace CaloRead
             var food = new Food();
             var profile = new Profile();
             ChangeFragment(diary);
-
-            int data = 0;
 
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
             btnDiary.Click += (s, e) =>
