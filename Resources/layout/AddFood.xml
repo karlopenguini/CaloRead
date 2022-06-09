@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="75dp">
+    android:id="@+id/RL_Main"
+    android:paddingHorizontal="20dp">
 
-</LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RL_Arrow"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp">
+        <ImageButton
+            android:src="@drawable/ArrowCircleLeft"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:id="@+id/BTN_GoBack"
+            android:background="@android:color/transparent"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LL_Container"
+        android:layout_marginTop="100dp">
+        <TextView
+            android:text="Nutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSpanishVeridian"
+            android:textSize="32dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LL_Nutritional"
+            android:background="#fff2f6cc"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
