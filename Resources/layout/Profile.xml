@@ -1,14 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="Profile"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/RL_Main"
+    android:paddingHorizontal="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/textView1" />
-</LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LL_Main" 
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp" >
+
+        <TextView
+            android:text="Hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSpanishVeridian"
+            android:textSize="32dp" />
+        <TextView
+            android:text="username."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBitterLemon"
+            android:textSize="32dp" />
+
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RL_FoodInfo">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/LL_UpdateButtons">
+
+                <ImageButton
+                android:src="@drawable/Check"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/BTN_Confirm"
+                android:background="@android:color/transparent"/>
+
+                <ImageButton
+                    android:src="@drawable/Cross"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/BTN_Cancel"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:src="@drawable/editpencil"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/BTN_Edit"
+                android:background="@android:color/transparent"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LL_DataContainer">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:id="@+id/LL_Credentials">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LL_Username"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:text="USERNAME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_UsernameLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textFontWeight="200"
+                        android:maxLines="1"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Username"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LL_Password">
+                    <TextView
+                        android:text="PASSWORD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_PasswordLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Password"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LL_Data"
+                android:gravity="center">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Weight"
+                    android:gravity="center|top"
+                    android:layout_marginRight="50dp">
+                    <TextView
+                        android:text="WEIGHT (KG)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_WeightLBL"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Weight"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Height"
+                    android:gravity="center|top"
+                    android:layout_marginRight="50dp">
+                    <TextView
+                        android:text="HEIGHT (CM)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_HeightLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Height"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Gender"
+                    android:gravity="center|top" >
+                    <TextView
+                        android:text="GENDER"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:gravity="center"
+                        android:layout_marginBottom="20.5dp"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_GenderLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Gender"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:id="@+id/LL_Goal">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LL_CalorieGoal"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:text="CALORIE GOAL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_CalorieGoalLbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textFontWeight="200"
+                        android:maxLines="1"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_CalorieGoal"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LL_BMI">
+                    <TextView
+                        android:text="BMR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_BMILbl"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_BMI"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+   
+</RelativeLayout>
