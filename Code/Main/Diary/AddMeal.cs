@@ -14,6 +14,14 @@ namespace CaloRead
 {
     public class AddMeal : AndroidX.Fragment.App.Fragment
     {
+        ImageButton goBack;
+        private string Type;
+        public AddMeal(string _type)
+        {
+            Type = _type;
+            
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,12 +33,29 @@ namespace CaloRead
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            var activty = Activity as App;
-            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activty.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Invisible;
-
-
             View view = inflater.Inflate(Resource.Layout.AddMeal, container, false);
+            var activity = Activity as App;
+            activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Invisible;
+            activity.FindViewById<TextView>(Resource.Id.header_label).Text = Type;
+
+            goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Add_Meal);
+
+            goBack.Click += (s, e) =>
+            {
+                switch (Type){
+                    case "breakfast":
+                        activity.ChangeFragment(activity.MealBreakfast);
+                        break;
+                    case "lunch":
+                        activity.ChangeFragment(activity.MealLunch);
+                        break;
+                    case "dinner":
+                        activity.ChangeFragment(activity.MealDinner);
+                        break;
+                }
+            };
+            
             return view;
         }
     }

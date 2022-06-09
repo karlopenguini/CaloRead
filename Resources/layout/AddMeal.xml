@@ -1,8 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/RL_Main"
     android:paddingTop="75dp">
 
-</LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RL_Arrow"
+        android:layout_alignParentTop="true">
+        <ImageButton
+            android:src="@drawable/ArrowCircleLeft"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:id="@+id/BTN_GoBack_Add_Meal"
+            android:background="@android:color/transparent"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LL_Container"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:text="Nutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSpanishVeridian"
+            android:textSize="32dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/LL_Nutritional"
+            android:background="@drawable/rounded_beige_container"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="200px"
+                android:layout_height="180px"
+                android:id="@+id/LL_kcal"
+                android:gravity="center"
+                >
+                <TextView
+                    android:text="kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="40px"
+                    android:textFontWeight="200"
+                    android:gravity="center"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/TV_kcalLbl"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textFontWeight="200"
+                    android:backgroundTint="@color/colorSpanishVeridian"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/ET_kcal"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="200px"
+                android:layout_height="180px"
+                android:id="@+id/LL_Protein"
+                android:gravity="center"
+                >
+                <TextView
+                    android:text="protein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="40px"
+                    android:textFontWeight="200"
+                    android:gravity="center"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/TV_ProteinLbl"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textFontWeight="200"
+                    android:backgroundTint="@color/colorSpanishVeridian"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/ET_Protein"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="200px"
+                android:layout_height="180px"
+                android:id="@+id/LL_Carbs"
+                android:gravity="center"
+                >
+                <TextView
+                    android:text="carbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="40px"
+                    android:textFontWeight="200"
+                    android:gravity="center"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/TV_CarbsLbl"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textFontWeight="200"
+                    android:backgroundTint="@color/colorSpanishVeridian"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/ET_Carbs"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="200px"
+                android:layout_height="180px"
+                android:id="@+id/LL_Fats"
+                android:gravity="center">
+                <TextView
+                    android:text="fats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="40px"
+                    android:textFontWeight="200"
+                    android:gravity="center"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/TV_FatsLbl"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textFontWeight="200"
+                    android:backgroundTint="@color/colorSpanishVeridian"
+                    android:textColor="@color/colorSpanishVeridian"
+                    android:id="@+id/ET_Fats"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/LL_FoodName">
+            <TextView
+                android:text="Food Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textFontWeight="200"
+                android:textColor="@color/colorSpanishVeridian"
+                android:id="@+id/TV_FoodNameLbl"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Meal_Add_Food" />
+            
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/LL_Grams">
+            <TextView
+                android:text="Servings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textFontWeight="200"
+                android:textColor="@color/colorSpanishVeridian"
+                android:id="@+id/TV_GramsLbl"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textFontWeight="200"
+                android:backgroundTint="@color/colorSpanishVeridian"
+                android:textColor="@color/colorSpanishVeridian"
+                android:id="@+id/ET_Servings"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:id="@+id/LL_Buttons">
+            <Button
+                android:text="ADD"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BTN_Update"
+                android:layout_marginBottom="6dp"
+                android:textSize="20dp"
+                android:textFontWeight="200"
+                android:background="@color/colorAppleGreen"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
