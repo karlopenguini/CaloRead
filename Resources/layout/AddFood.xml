@@ -218,6 +218,34 @@
                 android:id="@+id/ET_Grams"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/LL_Buttons">
+            <Button
+                android:text="UPDATE"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BTN_SignIn"
+                android:layout_marginBottom="6dp"
+                android:textSize="20dp"
+                android:textFontWeight="200"
+                android:background="@color/colorAppleGreen"
+                android:textColor="@android:color/white" />
+            <Button
+                android:text="REMOVE"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textSize="20dp"
+                android:textFontWeight="200"
+                android:background="#B95218"
+                android:textColor="@android:color/white"
+                android:id="@+id/BTN_Register" />
+        </LinearLayout>
     </LinearLayout>
 
 
