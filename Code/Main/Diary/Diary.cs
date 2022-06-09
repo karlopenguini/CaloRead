@@ -14,6 +14,12 @@ namespace CaloRead
 {
     public class Diary : AndroidX.Fragment.App.Fragment
     {
+
+
+        LinearLayout viewBreakfast;
+        LinearLayout viewLunch;
+        LinearLayout viewDinner;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,11 +33,27 @@ namespace CaloRead
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            var activty = Activity as App;
-            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activty.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Visible;
-
             View view = inflater.Inflate(Resource.Layout.Diary, container, false);
+            var activity = Activity as App;
+            activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Visible;
+            activity.FindViewById<TextView>(Resource.Id.header_label).Text = "TODAY";
+            viewBreakfast = view.FindViewById<LinearLayout>(Resource.Id.LL_Breakfast);
+            viewBreakfast.Click += (s, e) =>
+            {
+                activity.ChangeFragment(activity.MealBreakfast);
+            };
+            viewLunch = view.FindViewById<LinearLayout>(Resource.Id.LL_Lunch);
+            viewLunch.Click += (s, e) =>
+            {
+                activity.ChangeFragment(activity.MealLunch);
+            };
+            viewDinner = view.FindViewById<LinearLayout>(Resource.Id.LL_Dinner);
+            viewDinner.Click += (s, e) =>
+            {
+                activity.ChangeFragment(activity.MealDinner);
+            };
+
             return view;
         }
     }

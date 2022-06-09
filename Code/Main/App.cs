@@ -17,16 +17,23 @@ namespace CaloRead
     public class App : AppCompatActivity
     {
         TextView _dateDisplay;
+        public Diary diary = new Diary();
+        public Food food = new Food();
+        public Profile profile = new Profile();
+        public Meal MealBreakfast = new Meal("breakfast");
+        public Meal MealLunch = new Meal("lunch");
+        public Meal MealDinner = new Meal("dinner");
+
+
         public int year, month, date;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
             // Create your application here
-            var diary = new Diary();
-            var food = new Food(); 
-            var profile = new Profile();
+
             ChangeFragment(diary);
 
             _dateDisplay = FindViewById<TextView>(Resource.Id.header_label);

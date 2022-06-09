@@ -435,7 +435,7 @@
                 <TextView
                     android:textSize="20dp"
                     android:textColor="@color/colorSpanishVeridian"
-                    android:text="Dinner"
+                    android:text="DINNER"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/TV_Dinner" />
