@@ -14,7 +14,7 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1" 
+        android:id="@+id/LL_Main" 
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp" >
 
@@ -37,15 +37,15 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2"
+            android:id="@+id/LL_Buttons"
             android:gravity="center|right">
 
             <ImageButton
                 android:src="@drawable/Check"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:id="@+id/BTN_Confirm"
                 android:layout_marginRight="10dp"
+                android:id="@+id/BTN_Confirm"
                 android:background="@android:color/transparent"/>
 
             <ImageButton
@@ -54,7 +54,16 @@
                 android:layout_height="20dp"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
+                android:layout_marginRight="10dp"
                 android:id="@+id/BTN_Cancel"
+                android:background="@android:color/transparent"/>
+
+            <ImageButton
+                android:src="@drawable/editpencil"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/BTN_Edit"
+                android:layout_marginRight="10dp"
                 android:background="@android:color/transparent"/>
 
         </LinearLayout>
@@ -65,7 +74,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LL_Container">
+            android:id="@+id/LL_DataContainer">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
