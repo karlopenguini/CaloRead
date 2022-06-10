@@ -25,7 +25,7 @@ namespace CaloRead
         public Meal MealDinner = new Meal("dinner");
 
 
-        public int year, month, date;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
