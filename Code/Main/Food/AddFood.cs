@@ -15,6 +15,8 @@ namespace CaloRead
     public class AddFood : AndroidX.Fragment.App.Fragment
     {
         ImageButton goBack;
+        EditText kcal, protein, carbs, fats, name, grams;
+        Button add;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,14 +35,28 @@ namespace CaloRead
 
             View view = inflater.Inflate(Resource.Layout.AddFood, container, false);
 
+            // Instantiate Widgets
             goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Add_Food);
+            kcal = view.FindViewById<EditText>(Resource.Id.ET_kcal_AddFood);
+            protein = view.FindViewById<EditText>(Resource.Id.ET_Protein_AddFood);
+            carbs = view.FindViewById<EditText>(Resource.Id.ET_Carbs_AddFood);
+            fats = view.FindViewById<EditText>(Resource.Id.ET_Fats_AddFood);
+            name = view.FindViewById<EditText>(Resource.Id.ET_FoodName_AddFood);
+            grams = view.FindViewById<EditText>(Resource.Id.ET_Grams_AddFood);
 
             goBack.Click += (s, e) =>
             {
                 activity.ChangeFragment(activity.food);
             };
 
+
+
             return view;
+        }
+
+        public void Add_Food(object sender, EventArgs e)
+        {
+            
         }
     }
 }
