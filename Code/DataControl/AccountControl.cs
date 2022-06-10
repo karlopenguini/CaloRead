@@ -41,7 +41,7 @@ namespace CaloRead
                 weight = double.Parse(user.GetProperty("weight").ToString());
                 height = double.Parse(user.GetProperty("height").ToString());
                 gender = user.GetProperty("gender").ToString();
-                goal = double.Parse(user.GetProperty("goal").ToString());
+                goal = double.Parse(user.GetProperty("calorie_goal").ToString());
 
 
                 return true;

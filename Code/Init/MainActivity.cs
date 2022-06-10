@@ -38,7 +38,7 @@ namespace CaloRead
                 if (AccountControl.AuthenticateLogin(uname.Text, pword.Text, ref age, ref weight, ref height, ref gender, ref goal))
                 {
                     Intent intent = new Intent(this, typeof(App));
-                    Toast.MakeText(this, "Logged In!", ToastLength.Short).Show();
+
                     intent.PutExtra("uname", uname.Text);
                     intent.PutExtra("pword", pword.Text);
                     intent.PutExtra("weight", weight);

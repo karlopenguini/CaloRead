@@ -19,6 +19,7 @@ namespace CaloRead
         LinearLayout viewBreakfast;
         LinearLayout viewLunch;
         LinearLayout viewDinner;
+        TextView CalorieGoal;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,6 +39,7 @@ namespace CaloRead
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
             activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Visible;
             activity.FindViewById<TextView>(Resource.Id.header_label).Text = "TODAY";
+
             viewBreakfast = view.FindViewById<LinearLayout>(Resource.Id.LL_Breakfast);
             viewBreakfast.Click += (s, e) =>
             {

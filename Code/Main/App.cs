@@ -17,6 +17,9 @@ namespace CaloRead
     public class App : AppCompatActivity
     {
         TextView _dateDisplay;
+        TextView CalorieGoal_Diary;
+
+
         public Diary diary = new Diary();
         public Food food = new Food();
         public Profile profile = new Profile();
@@ -25,13 +28,13 @@ namespace CaloRead
         public Meal MealDinner = new Meal("dinner");
         public AddFood addFood = new AddFood();
 
-        string uname = "";
-        string pword = "";
-        double weight = 0;
-        double height = 0;
-        double age = 0;
-        string gender = "";
-        double goal = 0;
+        public string uname = "asd";
+        public string pword = "asd";
+        public double weight = 0;
+        public double height = 0;
+        public double age = 0;
+        public string gender = "";
+        public double goal = 0;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -39,6 +42,8 @@ namespace CaloRead
             Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
+            
+
 
             // Create your application here
 
@@ -52,6 +57,8 @@ namespace CaloRead
             goal = Intent.GetDoubleExtra("goal", 0);
 
             ChangeFragment(diary);
+
+            
 
             //buttons
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
