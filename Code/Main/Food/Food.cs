@@ -27,11 +27,11 @@ namespace CaloRead
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            var activty = Activity as App;
-            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activty.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
+            var activity = Activity as App;
+            activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
 
-            var addFood = new AddFood();
+            
             
 
             View view = inflater.Inflate(Resource.Layout.Food, container, false);
@@ -40,7 +40,7 @@ namespace CaloRead
 
             food_add.Click += (s, e) =>
             {
-                activty.ChangeFragment(addFood);
+                activity.ChangeFragment(activity.addFood);
             };
             return view;
         }

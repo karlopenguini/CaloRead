@@ -23,7 +23,8 @@ namespace CaloRead
         public Meal MealBreakfast = new Meal("breakfast");
         public Meal MealLunch = new Meal("lunch");
         public Meal MealDinner = new Meal("dinner");
-
+        public AddFood addFood = new AddFood();
+        
 
 
         protected override void OnCreate(Bundle savedInstanceState)
