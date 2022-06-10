@@ -20,13 +20,13 @@ namespace CaloRead
         TextView CalorieGoal_Diary;
 
 
-        public Diary diary = new Diary();
-        public Food food = new Food();
-        public Profile profile = new Profile();
-        public Meal MealBreakfast = new Meal("breakfast");
-        public Meal MealLunch = new Meal("lunch");
-        public Meal MealDinner = new Meal("dinner");
-        public AddFood addFood = new AddFood();
+        public Diary diary;
+        public Food food;
+        public Profile profile;
+        public Meal MealBreakfast;
+        public Meal MealLunch;
+        public Meal MealDinner;
+        public AddFood addFood;
 
         public string uname = "asd";
         public string pword = "asd";
@@ -36,18 +36,22 @@ namespace CaloRead
         public string gender = "";
         public double goal = 0;
 
+        public double currProtein = 0;
+        public double currCarbs = 0;
+        public double currFat = 0;
+
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
-            
 
 
-            // Create your application here
 
-            //user data
+
+            //USER DATA
             uname = Intent.GetStringExtra("uname");
             pword = Intent.GetStringExtra("pword");
             weight = Intent.GetDoubleExtra("weight", 0);
@@ -56,11 +60,18 @@ namespace CaloRead
             gender = Intent.GetStringExtra("gender");
             goal = Intent.GetDoubleExtra("goal", 0);
 
+            //INITIALIZE FRAGMENTS
+            diary = new Diary();
+            food = new Food();
+            profile = new Profile();
+            MealBreakfast = new Meal("breakfast");
+            MealLunch = new Meal("lunch");
+            MealDinner = new Meal("dinner");
+            addFood = new AddFood();
+
+            // INIT FRAGMENT
             ChangeFragment(diary);
-
-            
-
-            //buttons
+            //BUTTONS
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
             btnDiary.Click += (s, e) =>
             {
