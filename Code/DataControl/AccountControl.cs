@@ -18,7 +18,7 @@ namespace CaloRead
 
         public static bool AuthenticateLogin(string uname, string pword)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/REST/login.php?uname={uname}&pword={pword} ");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/login.php?uname={uname}&pword={pword} ");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
@@ -32,9 +32,9 @@ namespace CaloRead
             }
         }
 
-        public static bool Register(string uname, string pword, double age, double weight, double height, string gender, double goal, double bmr)
+        public static bool Register(string uname, string pword, double age, double weight, double height, string gender, double goal)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/REST/login.php?uname={uname}&pword={pword} ");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/register.php?uname={uname}&pword={pword}&weight={weight}&height={height}&age={age}&gender={gender}&goal={goal}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();

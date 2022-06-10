@@ -54,6 +54,8 @@ namespace CaloRead
 
                 if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal, bmr))
                 {
+                    Toast.MakeText(this, "Account Created!", ToastLength.Short).Show();
+
                     Intent intent = new Intent(this, typeof(App));
                     intent.PutExtra("uname", uname);
                     intent.PutExtra("pword", pword);

@@ -32,6 +32,9 @@ namespace CaloRead
                 {
                     Intent intent = new Intent(this, typeof(App));
                     StartActivity(intent);
+                } else
+                {
+                    Toast.MakeText(this, "Wrong Password or Username!", ToastLength.Short).Show();
                 }
             };
             var btnRegister = FindViewById<Button>(Resource.Id.BTN_Register);
