@@ -14,6 +14,8 @@ namespace CaloRead
 {
     public class AddFood : AndroidX.Fragment.App.Fragment
     {
+        ImageButton goBack;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,9 +33,9 @@ namespace CaloRead
 
             View view = inflater.Inflate(Resource.Layout.AddFood, container, false);
 
-            var back = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Add_Food);
+            goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Add_Food);
 
-            back.Click += (s, e) =>
+            goBack.Click += (s, e) =>
             {
                 activity.ChangeFragment(activity.food);
             };
