@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Code\DataControl\AccountControl.cs" />
     <Compile Include="Code\DataControl\FoodControl.cs" />
+    <Compile Include="Code\DataControl\MealControl.cs" />
     <Compile Include="Code\Main\Food\AddFood.cs" />
     <Compile Include="Code\Main\App.cs" />
     <Compile Include="Code\Main\Diary\Diary.cs" />

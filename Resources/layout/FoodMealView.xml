@@ -35,7 +35,7 @@
                 android:textFontWeight="200"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/colorBitterLemon"
-                android:id="@+id/TV_Name"
+                android:id="@+id/TV_FoodName_Recycler"
                 android:gravity="center" />
 
             <TextView
@@ -46,7 +46,7 @@
                 android:textFontWeight="200"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/colorBitterLemon"
-                android:id="@+id/TV_kcal"
+                android:id="@+id/TV_kcal_Recycler"
                 android:gravity="center" />
         </RelativeLayout>
 
@@ -66,7 +66,7 @@
                 android:textFontWeight="200"
                 android:layout_centerVertical="true"
                 android:textColor="@android:color/white"
-                android:id="@+id/TV_Grams" />
+                android:id="@+id/TV_Grams_Recycler" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -95,7 +95,7 @@
                         android:textFontWeight="200"
                         android:layout_alignParentLeft="true"
                         android:textColor="@android:color/white"
-                        android:id="@+id/TV_ProteinGrams"
+                        android:id="@+id/TV_ProteinGrams_Recycler"
                         android:gravity="center" />
 
                     <TextView
@@ -130,7 +130,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="20dp"
                         android:textColor="@android:color/white"
-                        android:id="@+id/TV_CarbsGrams"
+                        android:id="@+id/TV_CarbsGrams_Recycler"
                         android:gravity="center" />
 
                     <TextView
@@ -165,7 +165,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="20dp"
                         android:textColor="@android:color/white"
-                        android:id="@+id/TV_FatGrams"
+                        android:id="@+id/TV_FatGrams_Recycler"
                         android:gravity="center" />
 
                     <TextView
