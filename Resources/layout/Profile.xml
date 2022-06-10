@@ -35,7 +35,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/RL_FoodInfo">
+            android:id="@+id/RL_FoodInfo_Profile">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -44,14 +44,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:id="@+id/LL_UpdateButtons">
+                android:id="@+id/LL_UpdateButtons_Profile">
 
                 <ImageButton
                 android:src="@drawable/Check"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                android:id="@+id/BTN_Confirm"
+                android:id="@+id/BTN_Confirm_Profile"
                 android:background="@android:color/transparent"/>
 
                 <ImageButton
@@ -60,7 +60,7 @@
                     android:layout_height="20dp"
                     android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
-                    android:id="@+id/BTN_Cancel"
+                    android:id="@+id/BTN_Cancel_Profile"
                     android:background="@android:color/transparent"/>
 
             </LinearLayout>
@@ -70,7 +70,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
-                android:id="@+id/BTN_Edit"
+                android:id="@+id/BTN_Edit_Profile"
                 android:background="@android:color/transparent"/>
 
         </RelativeLayout>
@@ -113,7 +113,7 @@
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Username"/>
+                        android:id="@+id/ET_Username_Profile"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -137,7 +137,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Password"/>
+                        android:id="@+id/ET_Password_Profile"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -174,7 +174,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Weight"/>
+                        android:id="@+id/ET_Weight_Profile"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -201,7 +201,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Height"/>
+                        android:id="@+id/ET_Height_Profile"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -228,7 +228,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Gender"/>
+                        android:id="@+id/ET_Gender_Profile"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -263,7 +263,7 @@
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_CalorieGoal"/>
+                        android:id="@+id/ET_CalorieGoal_Profile"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -287,7 +287,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_BMI"/>
+                        android:id="@+id/ET_BMI_Profile"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
