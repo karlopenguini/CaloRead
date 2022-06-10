@@ -68,7 +68,7 @@ namespace CaloRead
             }
         }
 
-        public static bool Update(string uname, string pword, int age, float weight, float height, string gender, float goal)
+        public static bool Update(ref string uname, string pword, ref int age, float weight, float height, string gender, float goal)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/updateaccount.php?uname={uname}&pword={pword}&weight={weight}&height={height}&age={age}&gender={gender}&goal={goal}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

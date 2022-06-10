@@ -106,9 +106,12 @@
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/TV_UsernameLbl"/>
                     <EditText
+                        android:text="TEST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
+                        android:enabled="false"
+
                         android:textFontWeight="200"
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -133,6 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -169,7 +173,8 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="text"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -196,7 +201,8 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="text"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -223,7 +229,8 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="text"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -259,6 +266,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
+                        android:enabled="false"
                         android:textFontWeight="200"
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -282,7 +290,8 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="text"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
