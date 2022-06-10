@@ -52,7 +52,7 @@ namespace CaloRead
 
                 double _goal = double.Parse(goal.Text);
 
-                if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal, bmr))
+                if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal))
                 {
                     Toast.MakeText(this, "Account Created!", ToastLength.Short).Show();
 
@@ -64,6 +64,9 @@ namespace CaloRead
                     intent.PutExtra("gender", gender);
                     intent.PutExtra("age", age);
                     StartActivity(intent);
+                } else
+                {
+                    Toast.MakeText(this, "Something Went Wrong . . .", ToastLength.Short).Show();
                 }
 
             };
