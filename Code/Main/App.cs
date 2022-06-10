@@ -92,10 +92,17 @@ namespace CaloRead
         }
         public void ChangeFragment(AndroidX.Fragment.App.Fragment fragment)
         {
-            var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-            fragmentTransaction.Replace(Resource.Id.fragment_container, fragment);
-            fragmentTransaction.AddToBackStack(null);
-            fragmentTransaction.Commit();
+            try
+            {
+                var fragmentTransaction = SupportFragmentManager.BeginTransaction();
+                fragmentTransaction.Replace(Resource.Id.fragment_container, fragment);
+                fragmentTransaction.AddToBackStack(null);
+                fragmentTransaction.Commit();
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void ShowMessage(string message)

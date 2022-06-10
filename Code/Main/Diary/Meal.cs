@@ -103,18 +103,16 @@ namespace CaloRead
 
         public class MealItems
         {
-            MealControl dbMeals = new MealControl();
-
             private MealItem[] Meals;
             private MealItem[] MealCards;
             public MealItems(string typeMeal, string username)
             {
-                Meals = dbMeals.GetMeals(typeMeal, username);
+                Meals = MealControl.GetMeals(typeMeal, username);
                 MealCards = Meals;
             }
             public MealItem this[int i]
             {
-                get { return Meals[i]; }
+                get { return MealCards[i]; }
             }
             public int NumMeals
             {
@@ -172,8 +170,7 @@ namespace CaloRead
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
                 // Inflate the CardView for the photo:
-                View itemView = LayoutInflater.From(parent.Context).
-                            Inflate(Resource.Layout.FoodMealView, parent, false);
+                View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.FoodMealView, parent, false);
 
                 // Create a ViewHolder to hold view references inside the CardView:
                 MealItemHolder vh = new MealItemHolder(itemView);
