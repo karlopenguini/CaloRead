@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorSpanishVeridian</item>
         <item name="colorAccent">@color/colorSpanishVeridian</item>
 		<item name="fontFamily">@font/roboto_text</item>
+		<item name="android:windowBackground">@android:color/white</item>
     </style>
 
 </resources>
