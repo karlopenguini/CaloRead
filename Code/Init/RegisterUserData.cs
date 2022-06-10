@@ -42,10 +42,10 @@ namespace CaloRead
                 Intent intent = new Intent(this, typeof(RegisterCalorieGoal));
                 intent.PutExtra("uname",uname.Text);
                 intent.PutExtra("pword", pword.Text);
-                intent.PutExtra("weight", double.Parse(weight.Text));
-                intent.PutExtra("height", double.Parse(height.Text));
+                intent.PutExtra("weight", float.Parse(weight.Text));
+                intent.PutExtra("height", float.Parse(height.Text));
                 intent.PutExtra("gender", gender.Text);
-                intent.PutExtra("age", double.Parse(age.Text));
+                intent.PutExtra("age", float.Parse(age.Text));
                 StartActivity(intent);
             };
         }

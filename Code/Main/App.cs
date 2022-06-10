@@ -20,21 +20,26 @@ namespace CaloRead
         TextView CalorieGoal_Diary;
 
 
-        public Diary diary = new Diary();
-        public Food food = new Food();
-        public Profile profile = new Profile();
-        public Meal MealBreakfast = new Meal("breakfast");
-        public Meal MealLunch = new Meal("lunch");
-        public Meal MealDinner = new Meal("dinner");
-        public AddFood addFood = new AddFood();
+        public Diary diary;
+        public Food food;
+        public Profile profile;
+        public Meal MealBreakfast;
+        public Meal MealLunch;
+        public Meal MealDinner;
+        public AddFood addFood;
 
         public string uname = "asd";
         public string pword = "asd";
-        public double weight = 0;
-        public double height = 0;
-        public double age = 0;
+        public float weight = 0;
+        public float height = 0;
+        public float age = 0;
         public string gender = "";
-        public double goal = 0;
+        public float goal = 0;
+
+        public float currProtein = 0;
+        public float currCarbs = 0;
+        public float currFat = 0;
+
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,25 +47,31 @@ namespace CaloRead
             Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
-            
 
 
-            // Create your application here
 
-            //user data
+
+            //USER DATA
             uname = Intent.GetStringExtra("uname");
             pword = Intent.GetStringExtra("pword");
-            weight = Intent.GetDoubleExtra("weight", 0);
-            height = Intent.GetDoubleExtra("height", 0);
-            age = Intent.GetDoubleExtra("age", 0);
+            weight = Intent.GetFloatExtra("weight", 0);
+            height = Intent.GetFloatExtra("height", 0);
+            age = Intent.GetFloatExtra("age", 0);
             gender = Intent.GetStringExtra("gender");
-            goal = Intent.GetDoubleExtra("goal", 0);
+            goal = Intent.GetFloatExtra("goal", 0);
 
+            //INITIALIZE FRAGMENTS
+            diary = new Diary();
+            food = new Food();
+            profile = new Profile();
+            MealBreakfast = new Meal("breakfast");
+            MealLunch = new Meal("lunch");
+            MealDinner = new Meal("dinner");
+            addFood = new AddFood();
+
+            // INITIATE FRAGMENT
             ChangeFragment(diary);
-
-            
-
-            //buttons
+            //BUTTONS
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
             btnDiary.Click += (s, e) =>
             {

@@ -26,20 +26,20 @@ namespace CaloRead
 
             string uname = Intent.GetStringExtra("uname");
             string pword = Intent.GetStringExtra("pword");
-            double weight = Intent.GetDoubleExtra("weight", 0);
-            double height = Intent.GetDoubleExtra("height", 0);
-            double age = Intent.GetDoubleExtra("age", 0);
+            float weight = Intent.GetFloatExtra("weight", 0);
+            float height = Intent.GetFloatExtra("height", 0);
+            int age = Intent.GetIntExtra("age", 0);
             string gender = Intent.GetStringExtra("gender");
             goal = FindViewById<EditText>(Resource.Id.ET_CalorieGoal);
-            double bmr = 0;
+            float bmr = 0;
 
             switch (gender)
             {
                 case "MALE":
-                    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                    bmr = (10f * weight) + (6.25f * height) - (5 * age) + 5;
                     break;
                 case "FEMALE":
-                    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                    bmr = (10f * weight) + (6.25f * height) - (5 * age) - 161;
                     break;
             }
 
@@ -50,7 +50,7 @@ namespace CaloRead
             register.Click += (s, e) =>
             {
 
-                double _goal = double.Parse(goal.Text);
+                float _goal = float.Parse(goal.Text);
 
                 if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal))
                 {
