@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:background="@android:color/transparent"
             android:layout_height="match_parent"
+
             android:id="@+id/BTN_Calendar"
             style="@style/Base.Widget.AppCompat.Spinner"/>
         

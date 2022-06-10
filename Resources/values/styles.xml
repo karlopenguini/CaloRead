@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorSpanishVeridian</item>
         <item name="colorPrimaryDark">@color/colorSpanishVeridian</item>
         <item name="colorAccent">@color/colorSpanishVeridian</item>
+		<item name="fontFamily">@font/roboto_text</item>
     </style>
 
 </resources>
