@@ -67,7 +67,7 @@
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Username"/>
+                        android:id="@+id/ET_Username_Register"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -91,7 +91,7 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Password"/>
+                        android:id="@+id/ET_Password_Register"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -102,6 +102,11 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/LL_Data"
                 android:gravity="center">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -110,7 +115,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Weight"
                     android:gravity="center|top"
-                    android:layout_marginRight="35dp">
+                    >
                     <TextView
                         android:text="WEIGHT (KG)"
                         android:layout_width="wrap_content"
@@ -127,8 +132,13 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Weight"/>
+                        android:id="@+id/ET_Weight_Register"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -137,7 +147,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Height"
                     android:gravity="center|top"
-                    android:layout_marginRight="35dp">
+                    >
                     <TextView
                         android:text="HEIGHT (CM)"
                         android:layout_width="wrap_content"
@@ -154,8 +164,13 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Height"/>
+                        android:id="@+id/ET_Height_Register"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -164,6 +179,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Gender"
                     android:gravity="center|top"
+                    
                     >
                     <TextView
                         android:text="GENDER"
@@ -182,8 +198,46 @@
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Gender"/>
+                        android:id="@+id/ET_Gender_Register"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Age"
+                    android:gravity="center|top"
+                    >
+                    <TextView
+                        android:text="AGE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:layout_marginBottom="16.5dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_AgeLBL"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Age_Register"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

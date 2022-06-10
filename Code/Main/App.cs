@@ -24,21 +24,33 @@ namespace CaloRead
         public Meal MealLunch = new Meal("lunch");
         public Meal MealDinner = new Meal("dinner");
         public AddFood addFood = new AddFood();
-        
+
+        string uname;
+        string pword;
+        double weight;
+        double height;
+        double age;
+        string gender;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
-
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
-            // Create your application here
 
+            // Create your application here
+            uname = Intent.GetStringExtra("uname");
+            pword = Intent.GetStringExtra("pword");
+            weight = Intent.GetDoubleExtra("weight", 0);
+            height = Intent.GetDoubleExtra("height", 0);
+            age = Intent.GetDoubleExtra("age", 0);
+            gender = Intent.GetStringExtra("gender");
             ChangeFragment(diary);
 
-            _dateDisplay = FindViewById<TextView>(Resource.Id.header_label);
 
+
+            //buttons
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
             btnDiary.Click += (s, e) =>
             {

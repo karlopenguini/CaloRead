@@ -11,18 +11,36 @@ namespace CaloRead
 
     public class MainActivity : AppCompatActivity
     {
+        EditText uname;
+        EditText pword;
+        public Intent intentRegistration;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Login);
-            var btn = FindViewById<Button>(Resource.Id.BTN_Register);
-            btn.Click += (s, e) =>
+
+
+            uname = FindViewById<EditText>(Resource.Id.ET_Username);
+            pword = FindViewById<EditText>(Resource.Id.ET_Password);
+
+            var btnSignIn = FindViewById<Button>(Resource.Id.BTN_SignIn);
+            btnSignIn.Click += (s, e) =>
             {
-                Intent intent = new Intent(this, typeof(RegisterUserData));
-                StartActivity(intent);
+                if (AccountControl.AuthenticateLogin(uname.Text, pword.Text))
+                {
+                    Intent intent = new Intent(this, typeof(App));
+                    StartActivity(intent);
+                }
             };
+            var btnRegister = FindViewById<Button>(Resource.Id.BTN_Register);
+            btnRegister.Click += (s, e) =>
+            {
+                intentRegistration = new Intent(this, typeof(RegisterUserData));
+                StartActivity(intentRegistration);
+            };
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

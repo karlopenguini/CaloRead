@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\DataControl\AccountControl.cs" />
     <Compile Include="Code\Main\Food\AddFood.cs" />
     <Compile Include="Code\Main\App.cs" />
     <Compile Include="Code\Main\Diary\Diary.cs" />
@@ -125,6 +126,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Text.Json">
+      <Version>6.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
@@ -242,9 +246,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\font\roboto_text.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code\DataControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
