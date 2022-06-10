@@ -54,12 +54,12 @@ namespace CaloRead
             {
                 if (FoodControl.Add(float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
                 {
-                    //Toast.MakeText(this, "Food Added!", ToastLength.Short).Show();
+                    activity.ShowMessage("Food Added!");
                     activity.ChangeFragment(activity.food);
                 }
                 else
                 {
-                    //Toast.MakeText(this, "Unable to Add Food!", ToastLength.Short).Show();
+                    activity.ShowMessage("Unable to Add Food!");
                 }
             };
 
