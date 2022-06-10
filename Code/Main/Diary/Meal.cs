@@ -20,7 +20,7 @@ namespace CaloRead
         RelativeLayout addMeal;
 
         public AddMeal _addMeal;
-        private string Type;
+        public string TypeMeal;
 
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
@@ -31,8 +31,8 @@ namespace CaloRead
 
         public Meal(string _type)
         {
-            Type = _type;
-            _addMeal = new AddMeal(Type);
+            TypeMeal = _type;
+            _addMeal = new AddMeal(TypeMeal);
         }
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,9 +48,9 @@ namespace CaloRead
             var activity = Activity as App;
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
             activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Invisible;
-            activity.FindViewById<TextView>(Resource.Id.header_label).Text = Type;
+            activity.FindViewById<TextView>(Resource.Id.header_label).Text = TypeMeal;
 
-            mMealItems = new MealItems();
+            mMealItems = new MealItems(TypeMeal, activity.uname);
             
 
             //RECYCLER VIEW
@@ -103,10 +103,13 @@ namespace CaloRead
 
         public class MealItems
         {
-            static MealItem[] Meals = { };
+            MealControl dbMeals = new MealControl();
+
+            private MealItem[] Meals;
             private MealItem[] MealCards;
-            public MealItems()
+            public MealItems(string typeMeal, string username)
             {
+                Meals = dbMeals.GetMeals(typeMeal, username);
                 MealCards = Meals;
             }
             public MealItem this[int i]
