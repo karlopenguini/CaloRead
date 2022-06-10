@@ -69,7 +69,7 @@ namespace CaloRead
             MealDinner = new Meal("dinner");
             addFood = new AddFood();
 
-            // INIT FRAGMENT
+            // INITIATE FRAGMENT
             ChangeFragment(diary);
             //BUTTONS
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);
@@ -96,6 +96,11 @@ namespace CaloRead
             fragmentTransaction.Replace(Resource.Id.fragment_container, fragment);
             fragmentTransaction.AddToBackStack(null);
             fragmentTransaction.Commit();
+        }
+
+        public void SaySomething(string message)
+        {
+            Toast.MakeText(this, message, ToastLength.Long).Show();
         }
 
 
