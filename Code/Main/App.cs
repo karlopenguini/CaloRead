@@ -98,11 +98,10 @@ namespace CaloRead
             fragmentTransaction.Commit();
         }
 
-        public void SaySomething(string message)
+        public void ShowMessage(string message)
         {
-            Toast.MakeText(this, message, ToastLength.Long).Show();
+            Toast.MakeText(this, message, ToastLength.Short).Show();
         }
-
 
     }
 }
