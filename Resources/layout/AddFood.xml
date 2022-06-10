@@ -21,7 +21,7 @@
             android:layout_height="120px"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:id="@+id/BTN_GoBack"
+            android:id="@+id/BTN_GoBack_Add_Food"
             android:background="@android:color/transparent"
             android:layout_alignParentLeft="true"/>
     </RelativeLayout>

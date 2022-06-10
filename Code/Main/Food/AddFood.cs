@@ -14,6 +14,8 @@ namespace CaloRead
 {
     public class AddFood : AndroidX.Fragment.App.Fragment
     {
+        ImageButton goBack;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,11 +27,19 @@ namespace CaloRead
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            var activty = Activity as App;
-            activty.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activty.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
+            var activity = Activity as App;
+            activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
 
             View view = inflater.Inflate(Resource.Layout.AddFood, container, false);
+
+            goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Add_Food);
+
+            goBack.Click += (s, e) =>
+            {
+                activity.ChangeFragment(activity.food);
+            };
+
             return view;
         }
     }
