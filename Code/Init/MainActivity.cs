@@ -14,6 +14,15 @@ namespace CaloRead
         EditText uname;
         EditText pword;
         public Intent intentRegistration;
+
+        private string username;
+        private string password;
+        private double weight;
+        private double height;
+        private string gender;
+        private double age;
+        private double goal;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,6 +40,17 @@ namespace CaloRead
                 if (AccountControl.AuthenticateLogin(uname.Text, pword.Text))
                 {
                     Intent intent = new Intent(this, typeof(App));
+                    Toast.MakeText(this, "Logged In!", ToastLength.Short).Show();
+                    AccountControl.GetUserData(ref username, ref password, ref age, ref weight, ref height, ref gender, ref goal);
+
+                    intent.PutExtra("uname", username);
+                    intent.PutExtra("pword", password);
+                    intent.PutExtra("weight", weight);
+                    intent.PutExtra("height", height);
+                    intent.PutExtra("gender", gender);
+                    intent.PutExtra("age", age);
+                    intent.PutExtra("goal", goal);
+
                     StartActivity(intent);
                 } else
                 {

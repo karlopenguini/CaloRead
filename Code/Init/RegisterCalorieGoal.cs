@@ -63,10 +63,11 @@ namespace CaloRead
                     intent.PutExtra("height", height);
                     intent.PutExtra("gender", gender);
                     intent.PutExtra("age", age);
+                    intent.PutExtra("goal", _goal);
                     StartActivity(intent);
                 } else
                 {
-                    Toast.MakeText(this, "Something Went Wrong . . .", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Wrong Password or Username!", ToastLength.Short).Show();
                 }
 
             };

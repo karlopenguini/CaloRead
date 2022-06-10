@@ -25,12 +25,13 @@ namespace CaloRead
         public Meal MealDinner = new Meal("dinner");
         public AddFood addFood = new AddFood();
 
-        string uname;
-        string pword;
-        double weight;
-        double height;
-        double age;
-        string gender;
+        string uname = "";
+        string pword = "";
+        double weight = 0;
+        double height = 0;
+        double age = 0;
+        string gender = "";
+        double goal = 0;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -40,15 +41,17 @@ namespace CaloRead
             SetContentView(Resource.Layout.App);
 
             // Create your application here
+
+            //user data
             uname = Intent.GetStringExtra("uname");
             pword = Intent.GetStringExtra("pword");
             weight = Intent.GetDoubleExtra("weight", 0);
             height = Intent.GetDoubleExtra("height", 0);
             age = Intent.GetDoubleExtra("age", 0);
             gender = Intent.GetStringExtra("gender");
+            goal = Intent.GetDoubleExtra("goal", 0);
+
             ChangeFragment(diary);
-
-
 
             //buttons
             var btnDiary = FindViewById<ImageButton>(Resource.Id.BTN_Diary);

@@ -32,6 +32,11 @@ namespace CaloRead
             }
         }
 
+        public static void GetUserData(ref string uname, ref string pword, ref double age, ref double weight, ref double height, ref string gender, ref double goal)
+        {
+
+        }
+
         public static bool Register(string uname, string pword, double age, double weight, double height, string gender, double goal)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/register.php?uname={uname}&pword={pword}&weight={weight}&height={height}&age={age}&gender={gender}&goal={goal}");

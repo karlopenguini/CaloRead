@@ -127,7 +127,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="numberDecimal"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -159,7 +159,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="numberDecimal"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -193,7 +193,6 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -226,7 +225,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
