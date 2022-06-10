@@ -43,20 +43,27 @@ namespace CaloRead
             fats = view.FindViewById<EditText>(Resource.Id.ET_Fats_AddFood);
             name = view.FindViewById<EditText>(Resource.Id.ET_FoodName_AddFood);
             grams = view.FindViewById<EditText>(Resource.Id.ET_Grams_AddFood);
+            add = view.FindViewById<Button>(Resource.Id.BTN_Add_AddFood);
 
             goBack.Click += (s, e) =>
             {
                 activity.ChangeFragment(activity.food);
             };
 
-
+            add.Click += (s, e) =>
+            {
+                if (FoodControl.Add(float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                {
+                    //Toast.MakeText(this, "Food Added!", ToastLength.Short).Show();
+                    activity.ChangeFragment(activity.food);
+                }
+                else
+                {
+                    //Toast.MakeText(this, "Unable to Add Food!", ToastLength.Short).Show();
+                }
+            };
 
             return view;
-        }
-
-        public void Add_Food(object sender, EventArgs e)
-        {
-            
         }
     }
 }
