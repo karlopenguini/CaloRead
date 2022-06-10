@@ -59,6 +59,19 @@ namespace CaloRead
                 }
             };
 
+            remove.Click += (s, e) =>
+            {
+                if (FoodControl.Remove(float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                {
+                    activity.ShowMessage("Food Removed!");
+                    activity.ChangeFragment(activity.food);
+                }
+                else
+                {
+                    activity.ShowMessage("Unable to Remove Food!");
+                }
+            };
+
             return view;
         }
     }

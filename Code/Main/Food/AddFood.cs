@@ -17,6 +17,7 @@ namespace CaloRead
         ImageButton goBack;
         EditText kcal, protein, carbs, fats, name, grams;
         Button add;
+        string username;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -53,7 +54,7 @@ namespace CaloRead
 
             add.Click += (s, e) =>
             {
-                if (FoodControl.Add(float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                if (FoodControl.Add(ref username, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
                 {
                     activity.ShowMessage("Food Added!");
                     activity.ChangeFragment(activity.food);
