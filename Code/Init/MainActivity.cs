@@ -15,8 +15,6 @@ namespace CaloRead
         EditText pword;
         public Intent intentRegistration;
 
-        private string username;
-        private string password;
         private double weight;
         private double height;
         private string gender;
@@ -37,14 +35,12 @@ namespace CaloRead
             var btnSignIn = FindViewById<Button>(Resource.Id.BTN_SignIn);
             btnSignIn.Click += (s, e) =>
             {
-                if (AccountControl.AuthenticateLogin(uname.Text, pword.Text))
+                if (AccountControl.AuthenticateLogin(uname.Text, pword.Text, ref age, ref weight, ref height, ref gender, ref goal))
                 {
                     Intent intent = new Intent(this, typeof(App));
                     Toast.MakeText(this, "Logged In!", ToastLength.Short).Show();
-                    AccountControl.GetUserData(ref username, ref password, ref age, ref weight, ref height, ref gender, ref goal);
-
-                    intent.PutExtra("uname", username);
-                    intent.PutExtra("pword", password);
+                    intent.PutExtra("uname", uname.Text);
+                    intent.PutExtra("pword", pword.Text);
                     intent.PutExtra("weight", weight);
                     intent.PutExtra("height", height);
                     intent.PutExtra("gender", gender);
