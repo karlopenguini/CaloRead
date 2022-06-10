@@ -5,8 +5,7 @@
     android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/RL_Main"
-    android:paddingHorizontal="20dp">
+    android:id="@+id/RL_Main">
 
     <LinearLayout
         android:orientation="vertical"
