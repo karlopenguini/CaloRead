@@ -15,11 +15,11 @@ namespace CaloRead
         EditText pword;
         public Intent intentRegistration;
 
-        private double weight;
-        private double height;
+        private float weight;
+        private float height;
         private string gender;
-        private double age;
-        private double goal;
+        private int age;
+        private float goal;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

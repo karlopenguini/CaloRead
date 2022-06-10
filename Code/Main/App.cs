@@ -30,15 +30,15 @@ namespace CaloRead
 
         public string uname = "asd";
         public string pword = "asd";
-        public double weight = 0;
-        public double height = 0;
-        public double age = 0;
+        public float weight = 0;
+        public float height = 0;
+        public float age = 0;
         public string gender = "";
-        public double goal = 0;
+        public float goal = 0;
 
-        public double currProtein = 0;
-        public double currCarbs = 0;
-        public double currFat = 0;
+        public float currProtein = 0;
+        public float currCarbs = 0;
+        public float currFat = 0;
 
 
 
@@ -54,11 +54,11 @@ namespace CaloRead
             //USER DATA
             uname = Intent.GetStringExtra("uname");
             pword = Intent.GetStringExtra("pword");
-            weight = Intent.GetDoubleExtra("weight", 0);
-            height = Intent.GetDoubleExtra("height", 0);
-            age = Intent.GetDoubleExtra("age", 0);
+            weight = Intent.GetFloatExtra("weight", 0);
+            height = Intent.GetFloatExtra("height", 0);
+            age = Intent.GetFloatExtra("age", 0);
             gender = Intent.GetStringExtra("gender");
-            goal = Intent.GetDoubleExtra("goal", 0);
+            goal = Intent.GetFloatExtra("goal", 0);
 
             //INITIALIZE FRAGMENTS
             diary = new Diary();
