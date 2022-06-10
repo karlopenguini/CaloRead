@@ -20,11 +20,14 @@ namespace CaloRead
         public AddMeal _addMeal;
         private string Type;
 
+        public double MealCalories;
+
         public Meal(string _type)
         {
             Type = _type;
             _addMeal = new AddMeal(Type);
         }
+
 
 
         public override void OnCreate(Bundle savedInstanceState)

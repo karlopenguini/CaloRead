@@ -38,6 +38,7 @@ namespace CaloRead
             goBack.Click += (s, e) =>
             {
                 activity.ChangeFragment(activity.food);
+
             };
 
             return view;
