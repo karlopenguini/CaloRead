@@ -20,6 +20,7 @@ namespace CaloRead
         RelativeLayout addMeal;
 
         public AddMeal _addMeal;
+        public EditMeal _editMeal;
         public string TypeMeal;
 
         RecyclerView mRecyclerView;
@@ -33,6 +34,7 @@ namespace CaloRead
         {
             TypeMeal = _type;
             _addMeal = new AddMeal(TypeMeal);
+            
         }
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -52,17 +54,21 @@ namespace CaloRead
 
             mMealItems = new MealItems(TypeMeal, activity.uname);
             
-
             //RECYCLER VIEW
             mRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.mealRecycler);
             
             // Linear Layout Manager:
             mLayoutManager = new LinearLayoutManager(activity);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-
+            
             // Plug in my adapter:
             mAdapter = new MealItemsAdapter(mMealItems);
+            mAdapter.ItemClick += (sender, position) =>
+            {
+                activity.ChangeFragment(new EditMeal(mMealItems[position].MealID));
+            };
             mRecyclerView.SetAdapter(mAdapter);
+            
 
             //BUTTONS
             goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_Meal);
@@ -91,7 +97,6 @@ namespace CaloRead
                 Carbs = _Carbs;
                 Fat = _Fat;
             }
-
             public int MealID { get; }
             public string FoodName { get; }
             public float Calories { get; }
@@ -99,16 +104,16 @@ namespace CaloRead
             public float Protein { get; }
             public float Carbs { get; }
             public float Fat { get; }
-        }
 
+        }
+        
         public class MealItems
         {
-            private MealItem[] Meals;
+            
             private MealItem[] MealCards;
             public MealItems(string typeMeal, string username)
             {
-                Meals = MealControl.GetMeals(typeMeal, username);
-                MealCards = Meals;
+                MealCards = MealControl.GetMeals(typeMeal, username);
             }
             public MealItem this[int i]
             {
@@ -129,7 +134,7 @@ namespace CaloRead
             public TextView Carbs { get; private set; }
             public TextView Fat { get; private set; }
 
-            public MealItemHolder(View itemView) : base(itemView)
+            public MealItemHolder(View itemView, Action<int> listener) : base(itemView)
             {
                 FoodName = itemView.FindViewById<TextView>(Resource.Id.TV_FoodName_Recycler);
                 Calories = itemView.FindViewById<TextView>(Resource.Id.TV_kcal_Recycler);
@@ -137,6 +142,8 @@ namespace CaloRead
                 Protein = itemView.FindViewById<TextView>(Resource.Id.TV_ProteinGrams_Recycler);
                 Carbs = itemView.FindViewById<TextView>(Resource.Id.TV_CarbsGrams_Recycler);
                 Fat = itemView.FindViewById<TextView>(Resource.Id.TV_FatGrams_Recycler);
+
+                itemView.Click += (sender, e) => listener (base.LayoutPosition);
             }
         }
 
@@ -154,11 +161,20 @@ namespace CaloRead
                 get { return mMealItems.NumMeals; }
             }
 
+            void OnClick(int position)
+            {
+                if (ItemClick != null)
+                {
+                    ItemClick(this, position);
+                }
+                    
+            }
+
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
                 MealItemHolder vh = holder as MealItemHolder;
 
-                // Load the photo image resource from the photo album:
+               
                 vh.FoodName.Text = mMealItems[position].FoodName;
                 vh.Calories.Text = mMealItems[position].Calories.ToString();
                 vh.TotalGrams.Text = mMealItems[position].TotalGrams.ToString();
@@ -173,10 +189,12 @@ namespace CaloRead
                 View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.FoodMealView, parent, false);
 
                 // Create a ViewHolder to hold view references inside the CardView:
-                MealItemHolder vh = new MealItemHolder(itemView);
+                MealItemHolder vh = new MealItemHolder(itemView, OnClick);
                 return vh;
             }
-        }
 
+            public event EventHandler<int> ItemClick;
+        }
+        
     }
 }
