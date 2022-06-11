@@ -17,6 +17,7 @@ namespace CaloRead
         ImageButton goBack;
         EditText kcal, protein, carbs, fats, name, grams, fat, foodname;
         Button update, remove;
+        List<EditText> Fields = new List<EditText>();
 
         #region VARIABLES
         int FoodID = 0;
@@ -130,6 +131,49 @@ namespace CaloRead
             fat.Text = Fat.ToString();
             foodname.Text = FoodName;
             grams.Text = Grams.ToString();
+        }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if (kcal.Text == "" || float.Parse(kcal.Text) <= 0)
+            {
+                Fields.Add(kcal);
+            }
+
+            if (protein.Text == "" || float.Parse(protein.Text) <= 0)
+            {
+                Fields.Add(protein);
+            }
+
+            if (carbs.Text == "" || float.Parse(carbs.Text) <= 0)
+            {
+                Fields.Add(carbs);
+            }
+
+            if (fats.Text == "" || float.Parse(fats.Text) <= 0)
+            {
+                Fields.Add(fats);
+            }
+
+            if (name.Text == "")
+            {
+                Fields.Add(name);
+            }
+
+            if (grams.Text == "" || float.Parse(grams.Text) <= 0)
+            {
+                Fields.Add(grams);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach (EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
         }
     }
 }
