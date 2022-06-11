@@ -54,7 +54,7 @@ namespace CaloRead
 
             add.Click += (s, e) =>
             {
-                if (FoodControl.Add(ref username, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                if (FoodControl.Add(activity.uname.ToString(), float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
                 {
                     activity.ShowMessage("Food Added!");
                     activity.ChangeFragment(activity.food);

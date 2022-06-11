@@ -88,6 +88,7 @@ namespace CaloRead
 
             return result;
         }
+
         private static string _GetMeal(int mealID)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getmeal.php?mealID={mealID}");
