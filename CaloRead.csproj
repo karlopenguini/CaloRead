@@ -77,6 +77,7 @@
     <Compile Include="Code\Main\Profile\Profile.cs" />
     <Compile Include="Code\Init\RegisterUserData.cs" />
     <Compile Include="Code\Init\RegisterCalorieGoal.cs" />
+    <Compile Include="Code\Main\Validation.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
