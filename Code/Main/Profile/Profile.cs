@@ -18,6 +18,7 @@ namespace CaloRead
         TextView username;
 
         ImageButton edit, confirm, cancel;
+        List<EditText> Fields = new List<EditText>();
 
         #region VARIABLES
         private Dictionary<string, string> User;
@@ -92,15 +93,25 @@ namespace CaloRead
 
             confirm.Click += (s, e) =>
             {
-                if (AccountControl.Update(activity.uname, password.Text, int.Parse(age.Text), float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
+                CheckFields();
+
+                if (Fields.Count == 0)
                 {
-                    activity.ShowMessage("Profile Updated!");
-                    LoadUserData(activity.uname);
+                    if (AccountControl.Update(activity.uname, password.Text, int.Parse(age.Text), float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
+                    {
+                        activity.ShowMessage("Profile Updated!");
+                        LoadUserData(activity.uname);
+                    }
+                    else
+                    {
+                        activity.ShowMessage("Unable to Update Profile!");
+                    }
                 }
                 else
                 {
-                    activity.ShowMessage("Unable to Update Profile!");
+                    DisplayError();
                 }
+                
             };
 
             cancel.Click += (s, e) =>
@@ -123,6 +134,7 @@ namespace CaloRead
             weight.Enabled = true;
             height.Enabled = true;
             gender.Enabled = true;
+            age.Enabled = true;
             calorie_goal.Enabled = true;
         }
 
@@ -138,6 +150,7 @@ namespace CaloRead
             weight.Enabled = false;
             height.Enabled = false;
             gender.Enabled = false;
+            age.Enabled = false;
             calorie_goal.Enabled = false;
 
             LoadUserData();
@@ -164,6 +177,7 @@ namespace CaloRead
             weight.Enabled = false;
             height.Enabled = false;
             gender.Enabled = false;
+            age.Enabled = false;
             calorie_goal.Enabled = false;
 
             User = AccountControl.GetUserData(username);
@@ -183,6 +197,44 @@ namespace CaloRead
             gender.Text = Gender.ToString();
             age.Text = Age.ToString();
             calorie_goal.Text = Calorie_goal.ToString();
+        }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if (password.Text == "")
+            {
+                Fields.Add(password);
+            }
+
+            if (weight.Text == "" || float.Parse(weight.Text) <= 0)
+            {
+                Fields.Add(weight);
+            }
+
+            if (height.Text == "" || float.Parse(height.Text) <= 0)
+            {
+                Fields.Add(height);
+            }
+
+            if (gender.Text == "")
+            {
+                Fields.Add(gender);
+            }
+
+            if (calorie_goal.Text == "" || float.Parse(calorie_goal.Text) <= 0)
+            {
+                Fields.Add(calorie_goal);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach (EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
         }
     }
 }
