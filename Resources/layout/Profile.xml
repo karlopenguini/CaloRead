@@ -106,7 +106,6 @@
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/TV_UsernameLbl"/>
                     <EditText
-                        android:text="TEST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
