@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LL_Main" 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="30dp" >
 
         <TextView
@@ -28,14 +28,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBitterLemon"
-            android:textSize="32dp" />
+            android:textSize="32dp"
+            android:id="@+id/TV_UserDisplay_Profile"/>
 
         <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/RL_FoodInfo">
+            android:id="@+id/RL_FoodInfo_Profile">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -44,14 +45,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:id="@+id/LL_UpdateButtons">
+                android:id="@+id/LL_UpdateButtons_Profile">
 
                 <ImageButton
                 android:src="@drawable/Check"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                android:id="@+id/BTN_Confirm"
+                android:id="@+id/BTN_Confirm_Profile"
                 android:background="@android:color/transparent"/>
 
                 <ImageButton
@@ -60,7 +61,7 @@
                     android:layout_height="20dp"
                     android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
-                    android:id="@+id/BTN_Cancel"
+                    android:id="@+id/BTN_Cancel_Profile"
                     android:background="@android:color/transparent"/>
 
             </LinearLayout>
@@ -70,7 +71,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
-                android:id="@+id/BTN_Edit"
+                android:id="@+id/BTN_Edit_Profile"
                 android:background="@android:color/transparent"/>
 
         </RelativeLayout>
@@ -81,6 +82,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:id="@+id/LL_DataContainer">
             <LinearLayout
                 android:orientation="vertical"
@@ -90,31 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="36dp"
                 android:id="@+id/LL_Credentials">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:minWidth="25px"
-                    android:minHeight="25px"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/LL_Username"
-                    android:layout_marginBottom="12dp">
-                    <TextView
-                        android:text="USERNAME"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textFontWeight="200"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/TV_UsernameLbl"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:textFontWeight="200"
-                        android:maxLines="1"
-                        android:backgroundTint="@color/colorSpanishVeridian"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Username"/>
-                </LinearLayout>
+
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -133,11 +111,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Password"/>
+                        android:id="@+id/ET_Password_Profile"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -149,6 +128,11 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/LL_Data"
                 android:gravity="center">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -157,7 +141,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Weight"
                     android:gravity="center|top"
-                    android:layout_marginRight="50dp">
+                    >
                     <TextView
                         android:text="WEIGHT (KG)"
                         android:layout_width="wrap_content"
@@ -169,13 +153,19 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="numberDecimal"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Weight"/>
+                        android:id="@+id/ET_Weight_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -184,7 +174,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Height"
                     android:gravity="center|top"
-                    android:layout_marginRight="50dp">
+                    >
                     <TextView
                         android:text="HEIGHT (CM)"
                         android:layout_width="wrap_content"
@@ -196,13 +186,19 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:inputType="numberDecimal"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Height"/>
+                        android:id="@+id/ET_Height_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -210,26 +206,67 @@
                     android:layout_width="150px"
                     android:layout_height="200px"
                     android:id="@+id/LL_Gender"
-                    android:gravity="center|top" >
+                    android:gravity="center|top"
+                    
+                    >
                     <TextView
                         android:text="GENDER"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textFontWeight="200"
                         android:gravity="center"
-                        android:layout_marginBottom="20.5dp"
+                        android:layout_marginBottom="16.5dp"
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/TV_GenderLbl"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Gender_Profile"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Age"
+                    android:gravity="center|top"
+                    >
+                    <TextView
+                        android:text="AGE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:layout_marginBottom="16.5dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_AgeLBL"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Gender"/>
+                        android:id="@+id/ET_Age_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
             </LinearLayout>
 
             <LinearLayout
@@ -258,36 +295,13 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="number"
+                        android:enabled="false"
                         android:textFontWeight="200"
                         android:maxLines="1"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_CalorieGoal"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:minWidth="25px"
-                    android:minHeight="25px"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/LL_BMI">
-                    <TextView
-                        android:text="BMR"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textFontWeight="200"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/TV_BMILbl"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:textFontWeight="200"
-                        android:backgroundTint="@color/colorSpanishVeridian"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_BMI"/>
+                        android:id="@+id/ET_CalorieGoal_Profile"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
