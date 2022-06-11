@@ -14,14 +14,12 @@ namespace CaloRead
 {
     public class Profile : AndroidX.Fragment.App.Fragment
     {
-        EditText password, weight, height, gender, age, calorie_goal, bmr;
+        EditText password, weight, height, gender, age, calorie_goal;
         TextView username;
 
         ImageButton edit, confirm, cancel;
 
         #region VARIABLES
-        string Username;
-
         private Dictionary<string, string> User;
 
         string Password;
@@ -68,7 +66,6 @@ namespace CaloRead
             gender = view.FindViewById<EditText>(Resource.Id.ET_Gender_Profile);
             age = view.FindViewById<EditText>(Resource.Id.ET_Age_Profile);
             calorie_goal = view.FindViewById<EditText>(Resource.Id.ET_CalorieGoal_Profile);
-            bmr = view.FindViewById<EditText>(Resource.Id.ET_BMI_Profile);
             edit = view.FindViewById<ImageButton>(Resource.Id.BTN_Edit_Profile);
             confirm = view.FindViewById<ImageButton>(Resource.Id.BTN_Confirm_Profile);
             cancel = view.FindViewById<ImageButton>(Resource.Id.BTN_Cancel_Profile);
@@ -95,15 +92,15 @@ namespace CaloRead
 
             confirm.Click += (s, e) =>
             {
-                //if (AccountControl.Update(ref username, password.Text, ref age , float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
-                //{
-                //    activity.ShowMessage("Profile Updated!");
-                //    BTN_Cancel_Profile_Click();
-                //}
-                //else
-                //{
-                //    activity.ShowMessage("Unable to Update Profile!");
-                //}
+                if (AccountControl.Update(activity.uname, password.Text, int.Parse(age.Text), float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
+                {
+                    activity.ShowMessage("Profile Updated!");
+                    LoadUserData(activity.uname);
+                }
+                else
+                {
+                    activity.ShowMessage("Unable to Update Profile!");
+                }
             };
 
             cancel.Click += (s, e) =>
@@ -127,7 +124,6 @@ namespace CaloRead
             height.Enabled = true;
             gender.Enabled = true;
             calorie_goal.Enabled = true;
-            bmr.Enabled = true;
         }
 
         private void BTN_Cancel_Profile_Click()
@@ -143,13 +139,44 @@ namespace CaloRead
             height.Enabled = false;
             gender.Enabled = false;
             calorie_goal.Enabled = false;
-            bmr.Enabled = false;
 
             LoadUserData();
         }
-
         private void LoadUserData()
         {
+            password.Text = Password.ToString();
+            weight.Text = Weight.ToString();
+            height.Text = Height.ToString();
+            gender.Text = Gender.ToString();
+            age.Text = Age.ToString();
+            calorie_goal.Text = Calorie_goal.ToString();
+        }
+
+        private void LoadUserData(string username)
+        {
+            // Hide Confirm and Cancel Image Buttons
+            confirm.Visibility = ViewStates.Gone;
+            cancel.Visibility = ViewStates.Gone;
+            edit.Visibility = ViewStates.Visible;
+
+            // Disable EditTexts
+            password.Enabled = false;
+            weight.Enabled = false;
+            height.Enabled = false;
+            gender.Enabled = false;
+            calorie_goal.Enabled = false;
+
+            User = AccountControl.GetUserData(username);
+
+            #region INITIALIZE VARIABLES
+            Password = User["password"];
+            Weight = float.Parse(User["weight"]);
+            Height = float.Parse(User["height"]);
+            Gender = User["gender"];
+            Age = int.Parse(User["age"]);
+            Calorie_goal = float.Parse(User["calorie_goal"]);
+            #endregion
+
             password.Text = Password.ToString();
             weight.Text = Weight.ToString();
             height.Text = Height.ToString();
