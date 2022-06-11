@@ -17,7 +17,6 @@ namespace CaloRead
         ImageButton goBack;
         EditText kcal, protein, carbs, fats, name, grams;
         Button add;
-        string username;
 
         public override void OnCreate(Bundle savedInstanceState)
         {

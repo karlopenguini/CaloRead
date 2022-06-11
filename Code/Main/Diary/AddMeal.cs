@@ -74,11 +74,18 @@ namespace CaloRead
             Servings.Text = "1";
             Servings.EditorAction += (o, eventArgs) =>
             {
-                var actionId = eventArgs.ActionId;
-                if (actionId == Android.Views.InputMethods.ImeAction.Done)
+                if(int.Parse(Servings.Text) <= 0)
                 {
-                    HideKeyboard();
-                    RefreshNutrition();
+                    Servings.Error = "Please enter a valid value";
+                }
+                else
+                {
+                    var actionId = eventArgs.ActionId;
+                    if (actionId == Android.Views.InputMethods.ImeAction.Done)
+                    {
+                        HideKeyboard();
+                        RefreshNutrition();
+                    }
                 }
             };
             //BUTTONS
