@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LL_Main" 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="30dp" >
 
         <TextView
@@ -82,6 +82,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:id="@+id/LL_DataContainer">
             <LinearLayout
                 android:orientation="vertical"
@@ -91,33 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="36dp"
                 android:id="@+id/LL_Credentials">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:minWidth="25px"
-                    android:minHeight="25px"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/LL_Username"
-                    android:layout_marginBottom="12dp">
-                    <TextView
-                        android:text="USERNAME"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textFontWeight="200"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/TV_UsernameLbl"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:enabled="false"
 
-                        android:textFontWeight="200"
-                        android:maxLines="1"
-                        android:backgroundTint="@color/colorSpanishVeridian"
-                        android:textColor="@color/colorSpanishVeridian"
-                        android:id="@+id/ET_Username_Profile"/>
-                </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"

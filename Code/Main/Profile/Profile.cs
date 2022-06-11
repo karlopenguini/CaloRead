@@ -37,6 +37,7 @@ namespace CaloRead
             View view = inflater.Inflate(Resource.Layout.Profile, container, false);
 
             // Instantiate Widgets
+            username = view.FindViewById<TextView>(Resource.Id.TV_UserDisplay_Profile);
             password = view.FindViewById<EditText>(Resource.Id.ET_Password_Profile);
             weight = view.FindViewById<EditText>(Resource.Id.ET_Weight_Profile);
             height = view.FindViewById<EditText>(Resource.Id.ET_Height_Profile);
@@ -47,6 +48,9 @@ namespace CaloRead
             edit = view.FindViewById<ImageButton>(Resource.Id.BTN_Edit_Profile);
             confirm = view.FindViewById<ImageButton>(Resource.Id.BTN_Confirm_Profile);
             cancel = view.FindViewById<ImageButton>(Resource.Id.BTN_Cancel_Profile);
+
+            // Display username
+            username.Text = activity.uname;
 
             // Hide Confirm and Cancel Image Buttons
             confirm.Visibility = ViewStates.Gone;
@@ -61,15 +65,15 @@ namespace CaloRead
 
             confirm.Click += (s, e) =>
             {
-                if (AccountControl.Update(ref username, password.Text, ref age , float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
-                {
-                    activity.ShowMessage("Profile Updated!");
-                    BTN_Cancel_Profile_Click();
-                }
-                else
-                {
-                    activity.ShowMessage("Unable to Update Profile!");
-                }
+                //if (AccountControl.Update(ref username, password.Text, ref age , float.Parse(weight.Text), float.Parse(height.Text), gender.Text, float.Parse(calorie_goal.Text)))
+                //{
+                //    activity.ShowMessage("Profile Updated!");
+                //    BTN_Cancel_Profile_Click();
+                //}
+                //else
+                //{
+                //    activity.ShowMessage("Unable to Update Profile!");
+                //}
             };
 
             cancel.Click += (s, e) =>
