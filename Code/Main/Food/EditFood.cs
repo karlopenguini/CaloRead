@@ -96,15 +96,25 @@ namespace CaloRead
 
             update.Click += (s, e) =>
             {
-                if (FoodControl.Edit(FoodID, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fat.Text), foodname.Text, float.Parse(grams.Text)))
+                CheckFields();
+
+                if (Fields.Count == 0)
                 {
-                    activity.ShowMessage("Food Updated!");
-                    activity.ChangeFragment(activity.food);
+                    if (FoodControl.Edit(FoodID, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fat.Text), foodname.Text, float.Parse(grams.Text)))
+                    {
+                        activity.ShowMessage("Food Updated!");
+                        activity.ChangeFragment(activity.food);
+                    }
+                    else
+                    {
+                        activity.ShowMessage("Unable to Update Food!");
+                    }
                 }
                 else
                 {
-                    activity.ShowMessage("Unable to Update Food!");
+                    DisplayError();
                 }
+                
             };
 
             remove.Click += (s, e) =>
@@ -152,12 +162,12 @@ namespace CaloRead
                 Fields.Add(carbs);
             }
 
-            if (fats.Text == "" || float.Parse(fats.Text) <= 0)
+            if (fat.Text == "" || float.Parse(fat.Text) <= 0)
             {
                 Fields.Add(fats);
             }
 
-            if (name.Text == "")
+            if (foodname.Text == "")
             {
                 Fields.Add(name);
             }
