@@ -22,6 +22,7 @@ namespace CaloRead
         EditText height;
         EditText gender;
         EditText age;
+        List<EditText> Fields = new List<EditText>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,15 +40,68 @@ namespace CaloRead
             var btn = FindViewById<ImageButton>(Resource.Id.BTN_Next);
             btn.Click += (s, e) =>
             {
-                Intent intent = new Intent(this, typeof(RegisterCalorieGoal));
-                intent.PutExtra("uname",uname.Text);
-                intent.PutExtra("pword", pword.Text);
-                intent.PutExtra("weight", float.Parse(weight.Text));
-                intent.PutExtra("height", float.Parse(height.Text));
-                intent.PutExtra("gender", gender.Text);
-                intent.PutExtra("age", float.Parse(age.Text));
-                StartActivity(intent);
+                CheckFields();
+
+                if(Fields.Count == 0)
+                {
+                    Intent intent = new Intent(this, typeof(RegisterCalorieGoal));
+                    intent.PutExtra("uname", uname.Text);
+                    intent.PutExtra("pword", pword.Text);
+                    intent.PutExtra("weight", float.Parse(weight.Text));
+                    intent.PutExtra("height", float.Parse(height.Text));
+                    intent.PutExtra("gender", gender.Text);
+                    intent.PutExtra("age", float.Parse(age.Text));
+                    StartActivity(intent);
+                }
+                else
+                {
+                    DisplayError();
+                }
+                
             };
+        }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if(uname.Text == "")
+            {
+                Fields.Add(uname);
+            }
+
+            if(pword.Text == "")
+            {
+                Fields.Add(pword);
+            }
+
+            if(weight.Text == "")
+            {
+                Fields.Add(weight);
+            }
+
+            if (height.Text == "")
+            {
+                Fields.Add(height);
+            }
+
+            if (gender.Text == "")
+            {
+                Fields.Add(gender);
+            }
+
+            if (age.Text == "")
+            {
+                Fields.Add(age);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach(EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
         }
     }
 }
