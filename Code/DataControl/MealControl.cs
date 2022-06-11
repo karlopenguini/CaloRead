@@ -20,7 +20,7 @@ namespace CaloRead
         public static Meal.MealItem[] GetMeals(string type, string username)
         {
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/getmeals.php?type={type}&uname={username}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/getmeals.php?type={type}&uname={username}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
 
@@ -65,7 +65,7 @@ namespace CaloRead
 
         private static string _GetFood(int foodID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/searchfood.php?foodID={foodID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/searchfood.php?foodID={foodID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -74,9 +74,10 @@ namespace CaloRead
 
             return result;
         }
+
         private static string _GetMeal(int mealID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/getmeal.php?mealID={mealID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/getmeal.php?mealID={mealID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -125,7 +126,7 @@ namespace CaloRead
         }
         public static bool DeleteMeal(int mealID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/removemeal.php?mealID={mealID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/removemeal.php?mealID={mealID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
@@ -140,7 +141,7 @@ namespace CaloRead
         }
         public static bool UpdateMeal(int mealID, float servings)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/editmeal.php?mealID={mealID}&servings={servings}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/editmeal.php?mealID={mealID}&servings={servings}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();

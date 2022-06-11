@@ -19,6 +19,11 @@ namespace CaloRead
         Button update, remove;
         int foodID;
 
+        public EditFood(int _foodID)
+        {
+            foodID = _foodID;
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -47,9 +52,14 @@ namespace CaloRead
             update = view.FindViewById<Button>(Resource.Id.BTN_Update_EditFood);
             remove = view.FindViewById<Button>(Resource.Id.BTN_Remove_EditFood);
 
+            goBack.Click += (s, e) =>
+            {
+                activity.ChangeFragment(activity.food);
+            };
+
             update.Click += (s, e) =>
             {
-                if (FoodControl.Edit(ref foodID, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                if (FoodControl.Edit(foodID, float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
                 {
                     activity.ShowMessage("Food Updated!");
                     activity.ChangeFragment(activity.food);
