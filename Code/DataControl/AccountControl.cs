@@ -103,7 +103,7 @@ namespace CaloRead
 
         private static string GetUser(string username)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/searchuser.php?username={username}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/searchuser.php?username={username}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
