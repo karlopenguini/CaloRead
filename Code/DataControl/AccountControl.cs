@@ -112,5 +112,20 @@ namespace CaloRead
 
             return result;
         }
+
+        public static bool IsExistUser(string username)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/checkuser.php?username={username}");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            String res = response.ProtocolVersion.ToString();
+            if (res.Contains("No Username Found"))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

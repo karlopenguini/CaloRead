@@ -65,9 +65,7 @@ namespace CaloRead
         {
             Fields.Clear();
 
-            string user = AccountControl.GetUser(uname.Text);
-
-            if(uname.Text == "" || user != "")
+            if(uname.Text == "" || AccountControl.IsExistUser(uname.Text))
             {
                 Fields.Add(uname);
             }
