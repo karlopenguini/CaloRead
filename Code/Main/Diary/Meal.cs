@@ -81,7 +81,7 @@ namespace CaloRead
 
             //RECYCLER VIEW
             mRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.mealRecycler);
-            
+            mRecyclerView.NestedScrollingEnabled = false;
             // Linear Layout Manager:
             mLayoutManager = new LinearLayoutManager(activity);
             mRecyclerView.SetLayoutManager(mLayoutManager);

@@ -16,10 +16,11 @@ namespace CaloRead
 {
     public static class FoodControl
     {
+        public static string IP = "192.168.1.2";
         public static Food.FoodItem[] GetFood(string username)
         {
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/getfood.php?uname={username}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getfood.php?uname={username}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
 
@@ -73,7 +74,7 @@ namespace CaloRead
 
         private static string _GetFood(int foodID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/searchfood.php?foodID={foodID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/searchfood.php?foodID={foodID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -85,7 +86,7 @@ namespace CaloRead
 
         public static bool Add(string username, float kcal, float protein, float carbs, float fat, string name, float grams)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/addfood.php?uname={username}&kcal={kcal}&protein={protein}&carbs={carbs}&fat={fat}&name={name}&grams={grams}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/addfood.php?uname={username}&kcal={kcal}&protein={protein}&carbs={carbs}&fat={fat}&name={name}&grams={grams}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
@@ -101,7 +102,7 @@ namespace CaloRead
 
         public static bool Remove(int foodID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/removefood.php?foodID={foodID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/removefood.php?foodID={foodID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
@@ -117,7 +118,7 @@ namespace CaloRead
 
         public static bool Edit(int foodID, float kcal, float protein, float carbs, float fat, string name, float grams)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/editfood.php?foodID={foodID}&kcal={kcal}&protein={protein}&carbs={carbs}&fat={fat}&name={name}&grams={grams}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/editfood.php?foodID={foodID}&kcal={kcal}&protein={protein}&carbs={carbs}&fat={fat}&name={name}&grams={grams}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
