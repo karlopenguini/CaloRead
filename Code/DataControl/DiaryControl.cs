@@ -16,7 +16,7 @@ namespace CaloRead
 {
     static class DiaryControl
     {
-        static string IP = "192.168.254.105";
+        static string IP = "192.168.1.2";
         public static Dictionary<string, string> GetAllNutrition(string username, string date)
         {
 

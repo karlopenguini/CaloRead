@@ -17,7 +17,7 @@ namespace CaloRead
 {
     public static class MealControl
     {
-        static string IP = "192.168.254.105";
+        static string IP = "192.168.1.2";
         public static Meal.MealItem[] GetMeals(string type, string username, string date)
         {
 
