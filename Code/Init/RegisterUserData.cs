@@ -65,7 +65,9 @@ namespace CaloRead
         {
             Fields.Clear();
 
-            if(uname.Text == "")
+            string user = AccountControl.GetUser(uname.Text);
+
+            if(uname.Text == "" || user != "")
             {
                 Fields.Add(uname);
             }
@@ -75,12 +77,12 @@ namespace CaloRead
                 Fields.Add(pword);
             }
 
-            if(weight.Text == "")
+            if(weight.Text == "" || float.Parse(weight.Text) <= 0)
             {
                 Fields.Add(weight);
             }
 
-            if (height.Text == "")
+            if (height.Text == "" || float.Parse(height.Text) <= 0)
             {
                 Fields.Add(height);
             }
@@ -90,7 +92,7 @@ namespace CaloRead
                 Fields.Add(gender);
             }
 
-            if (age.Text == "")
+            if (age.Text == "" || int.Parse(age.Text) <= 0)
             {
                 Fields.Add(age);
             }

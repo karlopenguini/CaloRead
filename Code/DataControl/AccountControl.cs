@@ -101,7 +101,7 @@ namespace CaloRead
             return User;
         }
 
-        private static string GetUser(string username)
+        public static string GetUser(string username)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/searchuser.php?username={username}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
