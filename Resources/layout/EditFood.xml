@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/RL_Main"
-    android:paddingTop="75dp">
+    android:paddingTop="65dp">
 
     <RelativeLayout
         android:minWidth="25px"
@@ -75,7 +75,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
@@ -108,7 +107,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
@@ -141,7 +139,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
@@ -173,7 +170,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
@@ -200,7 +196,6 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:maxLines="1"
                 android:textFontWeight="200"
                 android:backgroundTint="@color/colorSpanishVeridian"
@@ -226,7 +221,6 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:maxLines="1"
                 android:textFontWeight="200"
                 android:backgroundTint="@color/colorSpanishVeridian"

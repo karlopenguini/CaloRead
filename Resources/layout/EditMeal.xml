@@ -21,7 +21,7 @@
             android:layout_height="120px"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:id="@+id/BTN_GoBack"
+            android:id="@+id/BTN_GoBack_EditMeal"
             android:background="@android:color/transparent"
             android:layout_alignParentLeft="true"/>
     </RelativeLayout>
@@ -75,12 +75,12 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_kcal"/>
+                    android:id="@+id/ET_kcal_EditMeal"/>
             </LinearLayout>
             <Space
                 android:layout_width="0dp"
@@ -108,12 +108,12 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Protein"/>
+                    android:id="@+id/ET_Protein_EditMeal"/>
             </LinearLayout>
             <Space
                 android:layout_width="0dp"
@@ -141,12 +141,12 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Carbs"/>
+                    android:id="@+id/ET_Carbs_EditMeal"/>
             </LinearLayout>
             <Space
                 android:layout_width="0dp"
@@ -173,12 +173,12 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    
                     android:maxLines="1"
                     android:textFontWeight="200"
                     android:backgroundTint="@color/colorSpanishVeridian"
                     android:textColor="@color/colorSpanishVeridian"
-                    android:id="@+id/ET_Fats"/>
+                    android:id="@+id/ET_Fats_EditMeal"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -201,13 +201,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:editable="false"
                 android:maxLines="1"
                 android:textFontWeight="200"
                 android:backgroundTint="@color/colorSpanishVeridian"
                 android:textColor="@color/colorSpanishVeridian"
-                android:id="@+id/ET_FoodName"/>
+                android:id="@+id/ET_FoodName_EditMeal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -228,13 +227,13 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:maxLines="1"
                 android:textFontWeight="200"
-                android:editable="false"
+                android:inputType="numberDecimal"
+                android:imeOptions="actionDone"
                 android:backgroundTint="@color/colorSpanishVeridian"
                 android:textColor="@color/colorSpanishVeridian"
-                android:id="@+id/ET_Grams"/>
+                android:id="@+id/ET_Servings_EditMeal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -249,7 +248,7 @@
                 android:text="UPDATE"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:id="@+id/BTN_Update"
+                android:id="@+id/BTN_Update_EditMeal"
                 android:layout_marginBottom="6dp"
                 android:textSize="20dp"
                 android:textFontWeight="200"
@@ -263,10 +262,7 @@
                 android:textFontWeight="200"
                 android:background="#B95218"
                 android:textColor="@android:color/white"
-                android:id="@+id/BTN_Remove" />
+                android:id="@+id/BTN_Remove_EditMeal" />
         </LinearLayout>
     </LinearLayout>
-
-
-
 </RelativeLayout>
