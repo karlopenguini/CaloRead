@@ -40,7 +40,7 @@ namespace CaloRead
             var btn = FindViewById<ImageButton>(Resource.Id.BTN_Next);
             btn.Click += (s, e) =>
             {
-                CheckFields(Fields);
+                CheckFields();
 
                 if(Fields.Count == 0)
                 {
@@ -61,9 +61,9 @@ namespace CaloRead
             };
         }
 
-        protected void CheckFields(List<EditText> ToClear)
+        protected void CheckFields()
         {
-            ToClear.Clear();
+            Fields.Clear();
 
             if(uname.Text == "" || AccountControl.IsExistUser(uname.Text))
             {

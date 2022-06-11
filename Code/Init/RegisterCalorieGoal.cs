@@ -49,26 +49,34 @@ namespace CaloRead
             var register = FindViewById<ImageButton>(Resource.Id.BTN_ConfirmRegistration);
             register.Click += (s, e) =>
             {
-
-                float _goal = float.Parse(goal.Text);
-
-                if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal))
+                if (goal.Text == "" || float.Parse(goal.Text) <= 0)
                 {
-                    Toast.MakeText(this, "Account Created!", ToastLength.Short).Show();
-
-                    Intent intent = new Intent(this, typeof(App));
-                    intent.PutExtra("uname", uname);
-                    intent.PutExtra("pword", pword);
-                    intent.PutExtra("weight", weight);
-                    intent.PutExtra("height", height);
-                    intent.PutExtra("gender", gender);
-                    intent.PutExtra("age", age);
-                    intent.PutExtra("goal", _goal);
-                    StartActivity(intent);
-                } else
-                {
-                    Toast.MakeText(this, "Wrong Password or Username!", ToastLength.Short).Show();
+                    goal.Error = "Please enter a valid value";
                 }
+                else
+                {
+                    float _goal = float.Parse(goal.Text);
+
+                    if (AccountControl.Register(uname, pword, age, weight, height, gender, _goal))
+                    {
+                        Toast.MakeText(this, "Account Created!", ToastLength.Short).Show();
+
+                        Intent intent = new Intent(this, typeof(App));
+                        intent.PutExtra("uname", uname);
+                        intent.PutExtra("pword", pword);
+                        intent.PutExtra("weight", weight);
+                        intent.PutExtra("height", height);
+                        intent.PutExtra("gender", gender);
+                        intent.PutExtra("age", age);
+                        intent.PutExtra("goal", _goal);
+                        StartActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Wrong Password or Username!", ToastLength.Short).Show();
+                    }
+                }
+                
 
             };
             var back = FindViewById<ImageButton>(Resource.Id.BTN_GoBack);

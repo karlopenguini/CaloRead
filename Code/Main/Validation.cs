@@ -11,7 +11,8 @@ using System.Text;
 
 namespace CaloRead
 {
-    class Validation
+    abstract class Validation
     {
+        public abstract void CheckFields();
     }
 }
