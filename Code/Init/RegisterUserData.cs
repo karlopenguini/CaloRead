@@ -50,7 +50,7 @@ namespace CaloRead
                     intent.PutExtra("weight", float.Parse(weight.Text));
                     intent.PutExtra("height", float.Parse(height.Text));
                     intent.PutExtra("gender", gender.Text);
-                    intent.PutExtra("age", float.Parse(age.Text));
+                    intent.PutExtra("age", int.Parse(age.Text));
                     StartActivity(intent);
                 }
                 else

@@ -117,14 +117,15 @@ namespace CaloRead
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/checkuser.php?username={username}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            String res = response.ProtocolVersion.ToString();
-            if (res.Contains("No Username Found"))
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            String res = reader.ReadToEnd();
+            if (res.Contains("OK!"))
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
     }
