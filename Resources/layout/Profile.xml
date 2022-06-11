@@ -28,7 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBitterLemon"
-            android:textSize="32dp" />
+            android:textSize="32dp"
+            android:id="@+id/TV_UserDisplay_Profile"/>
 
         <RelativeLayout
             android:minWidth="25px"
@@ -152,6 +153,11 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/LL_Data"
                 android:gravity="center">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -160,7 +166,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Weight"
                     android:gravity="center|top"
-                    android:layout_marginRight="50dp">
+                    >
                     <TextView
                         android:text="WEIGHT (KG)"
                         android:layout_width="wrap_content"
@@ -172,7 +178,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
@@ -180,6 +186,11 @@
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/ET_Weight_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -188,7 +199,7 @@
                     android:layout_height="200px"
                     android:id="@+id/LL_Height"
                     android:gravity="center|top"
-                    android:layout_marginRight="50dp">
+                    >
                     <TextView
                         android:text="HEIGHT (CM)"
                         android:layout_width="wrap_content"
@@ -200,7 +211,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"
@@ -208,6 +219,11 @@
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/ET_Height_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -215,27 +231,67 @@
                     android:layout_width="150px"
                     android:layout_height="200px"
                     android:id="@+id/LL_Gender"
-                    android:gravity="center|top" >
+                    android:gravity="center|top"
+                    
+                    >
                     <TextView
                         android:text="GENDER"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textFontWeight="200"
                         android:gravity="center"
-                        android:layout_marginBottom="20.5dp"
+                        android:layout_marginBottom="16.5dp"
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/TV_GenderLbl"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:enabled="false"
                         android:maxLines="1"
+                        android:enabled="false"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
                         android:textColor="@color/colorSpanishVeridian"
                         android:id="@+id/ET_Gender_Profile"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="150px"
+                    android:layout_height="200px"
+                    android:id="@+id/LL_Age"
+                    android:gravity="center|top"
+                    >
+                    <TextView
+                        android:text="AGE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="200"
+                        android:layout_marginBottom="16.5dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/TV_AgeLBL"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:textFontWeight="200"
+                        android:backgroundTint="@color/colorSpanishVeridian"
+                        android:textColor="@color/colorSpanishVeridian"
+                        android:id="@+id/ET_Age_Profile"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" >
+                </Space>
             </LinearLayout>
 
             <LinearLayout
@@ -264,7 +320,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:enabled="false"
                         android:textFontWeight="200"
                         android:maxLines="1"
@@ -289,7 +345,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:enabled="false"
                         android:maxLines="1"
                         android:textFontWeight="200"

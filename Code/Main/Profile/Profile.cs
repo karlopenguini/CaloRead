@@ -14,10 +14,10 @@ namespace CaloRead
 {
     public class Profile : AndroidX.Fragment.App.Fragment
     {
-        EditText password, weight, height, gender, calorie_goal, bmr;
+        EditText password, weight, height, gender, age, calorie_goal, bmr;
+        TextView username;
+
         ImageButton edit, confirm, cancel;
-        public string username;
-        private int age;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,6 +41,7 @@ namespace CaloRead
             weight = view.FindViewById<EditText>(Resource.Id.ET_Weight_Profile);
             height = view.FindViewById<EditText>(Resource.Id.ET_Height_Profile);
             gender = view.FindViewById<EditText>(Resource.Id.ET_Gender_Profile);
+            age = view.FindViewById<EditText>(Resource.Id.ET_Age_Profile);
             calorie_goal = view.FindViewById<EditText>(Resource.Id.ET_CalorieGoal_Profile);
             bmr = view.FindViewById<EditText>(Resource.Id.ET_BMI_Profile);
             edit = view.FindViewById<ImageButton>(Resource.Id.BTN_Edit_Profile);
@@ -51,6 +52,7 @@ namespace CaloRead
             confirm.Visibility = ViewStates.Gone;
             cancel.Visibility = ViewStates.Gone;
             edit.Visibility = ViewStates.Visible;
+
 
             edit.Click += (s, e) =>
             {
