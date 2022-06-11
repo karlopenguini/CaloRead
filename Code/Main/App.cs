@@ -17,8 +17,7 @@ namespace CaloRead
     public class App : AppCompatActivity
     {
         TextView _dateDisplay;
-        TextView CalorieGoal_Diary;
-
+        ImageButton CalendarBTN;
 
         public Diary diary;
         public Food food;
@@ -35,7 +34,7 @@ namespace CaloRead
         public float age = 0;
         public string gender = "";
         public float goal = 0;
-
+        public string date;
         public float currProtein = 0;
         public float currCarbs = 0;
         public float currFat = 0;
@@ -48,10 +47,8 @@ namespace CaloRead
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.App);
 
-
-
-
             //USER DATA
+            date = DateTime.Now.ToString("yyyy-MM-dd");
             uname = Intent.GetStringExtra("uname");
             pword = Intent.GetStringExtra("pword");
             weight = Intent.GetFloatExtra("weight", 0);
@@ -59,7 +56,8 @@ namespace CaloRead
             age = Intent.GetFloatExtra("age", 0);
             gender = Intent.GetStringExtra("gender");
             goal = Intent.GetFloatExtra("goal", 0);
-
+            _dateDisplay = FindViewById<TextView>(Resource.Id.header_label);
+            
             //INITIALIZE FRAGMENTS
             diary = new Diary();
             food = new Food();
@@ -88,6 +86,29 @@ namespace CaloRead
                 ChangeFragment(profile);
             };
 
+            CalendarBTN = FindViewById<ImageButton>(Resource.Id.BTN_Calendar_App);
+            CalendarBTN.Click += (s, e) =>
+            {
+
+                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                    {
+                        date = time.Date.ToString("yyyy-MM-dd");
+                        if(date == DateTime.Now.ToString("yyyy-MM-dd"))
+                        {
+                            _dateDisplay.Text = "TODAY";
+                        }
+                        else
+                        {
+                            _dateDisplay.Text = date;
+                        }
+                        
+
+                        diary.RefreshData(this);
+                    }
+                );
+                frag.Show(SupportFragmentManager, DatePickerFragment.TAG);
+                
+            };
 
         }
         public void ChangeFragment(AndroidX.Fragment.App.Fragment fragment)
@@ -102,13 +123,47 @@ namespace CaloRead
             {
                 throw ex;
             }
-            
         }
+        
 
         public void ShowMessage(string message)
         {
             Toast.MakeText(this, message, ToastLength.Short).Show();
         }
+        public class DatePickerFragment : AndroidX.Fragment.App.DialogFragment,
+                                  DatePickerDialog.IOnDateSetListener
+        {
+            // TAG can be any string of your choice.
+            public static readonly string TAG = "X:" + typeof(DatePickerFragment).Name.ToUpper();
 
+            // Initialize this value to prevent NullReferenceExceptions.
+            Action<DateTime> _dateSelectedHandler = delegate { };
+
+            public static DatePickerFragment NewInstance(Action<DateTime> onDateSelected)
+            {
+                DatePickerFragment frag = new DatePickerFragment();
+                frag._dateSelectedHandler = onDateSelected;
+                return frag;
+            }
+
+            public override Dialog OnCreateDialog(Bundle savedInstanceState)
+            {
+                DateTime currently = DateTime.Now;
+                DatePickerDialog dialog = new DatePickerDialog(Activity,
+                                                               this,
+                                                               currently.Year,
+                                                               currently.Month - 1,
+                                                               currently.Day);
+                return dialog;
+            }
+
+            public void OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+            {
+                // Note: monthOfYear is a value between 0 and 11, not 1 and 12!
+                DateTime selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
+                Log.Debug(TAG, selectedDate.ToLongDateString());
+                _dateSelectedHandler(selectedDate);
+            }
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace CaloRead
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
             var activity = Activity as App;
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar_App).Visibility = ViewStates.Gone;
 
             View view = inflater.Inflate(Resource.Layout.EditFood, container, false);
 

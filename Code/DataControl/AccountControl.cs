@@ -16,7 +16,7 @@ namespace CaloRead
 {
     public static class AccountControl
     {
-        static string IP = "192.168.254.105";
+        static string IP = "192.168.1.2";
         public static bool AuthenticateLogin(string uname, string pword, ref int age, ref float weight, ref float height, ref string gender, ref float goal)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/login.php?uname={uname}&pword={pword} ");
@@ -25,9 +25,7 @@ namespace CaloRead
             String res = reader.ReadToEnd();
             if (res.Contains("OK!"))
             {
-
-
-                request = (HttpWebRequest)WebRequest.Create($"http://192.168.254.105/caloread/getuser.php?uname={uname}");
+                request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getuser.php?uname={uname}");
                 response = (HttpWebResponse)request.GetResponse();
                 res = response.ProtocolVersion.ToString();
                 reader = new StreamReader(response.GetResponseStream());
