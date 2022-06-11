@@ -22,6 +22,14 @@ namespace CaloRead
         public AddMeal _addMeal;
         public EditMeal _editMeal;
         public string TypeMeal;
+        public string date;
+        TextView CalorieGoal;
+        TextView CalorieIntake;
+        TextView CalorieDeficit;
+        TextView MacroProtein;
+        TextView MacroCarbs;
+        TextView MacroFat;
+
 
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
@@ -49,11 +57,28 @@ namespace CaloRead
             View view = inflater.Inflate(Resource.Layout.Meal, container, false);
             var activity = Activity as App;
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Invisible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar_App).Visibility = ViewStates.Invisible;
             activity.FindViewById<TextView>(Resource.Id.header_label).Text = TypeMeal;
 
-            mMealItems = new MealItems(TypeMeal, activity.uname);
+            mMealItems = new MealItems(TypeMeal, activity.uname, activity.date);
+
+
+            //NUTRITION
+            CalorieGoal = view.FindViewById<TextView>(Resource.Id.TV_Goal_Calorie_Meal);
+            CalorieIntake = view.FindViewById<TextView>(Resource.Id.TV_Intake_Calorie_Meal);
+            CalorieDeficit = view.FindViewById<TextView>(Resource.Id.TV_Deficit_Calorie_Meal);
+            MacroProtein = view.FindViewById<TextView>(Resource.Id.TV_Protein_Meal);
+            MacroCarbs = view.FindViewById<TextView>(Resource.Id.TV_Carbs_Meal);
+            MacroFat = view.FindViewById<TextView>(Resource.Id.TV_Fat_Meal);
             
+            Dictionary<string, string> nutritionalData = DiaryControl.GetAllNutrition(activity.uname, activity.date);
+            CalorieGoal.Text = activity.goal.ToString();
+            CalorieIntake.Text = nutritionalData["totalCalories"];
+            CalorieDeficit.Text = (activity.goal - float.Parse(nutritionalData["totalCalories"])).ToString("n2");
+            MacroProtein.Text = nutritionalData["percentProtein"];
+            MacroCarbs.Text = nutritionalData["percentCarbs"];
+            MacroFat.Text = nutritionalData["percentFat"];
+
             //RECYCLER VIEW
             mRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.mealRecycler);
             
@@ -111,9 +136,10 @@ namespace CaloRead
         {
             
             private MealItem[] MealCards;
-            public MealItems(string typeMeal, string username)
+            public MealItems(string typeMeal, string username, string date)
             {
-                MealCards = MealControl.GetMeals(typeMeal, username);
+                
+                MealCards = MealControl.GetMeals(typeMeal, username, date);
             }
             public MealItem this[int i]
             {

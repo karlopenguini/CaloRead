@@ -15,6 +15,8 @@ namespace CaloRead
     public class Diary : AndroidX.Fragment.App.Fragment
     {
 
+        
+       
 
         LinearLayout viewBreakfast;
         LinearLayout viewLunch;
@@ -28,13 +30,14 @@ namespace CaloRead
         TextView BreakfastCalories;
         TextView LunchCalories;
         TextView DinnerCalories;
+        string date;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
-            
+
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -44,7 +47,7 @@ namespace CaloRead
             View view = inflater.Inflate(Resource.Layout.Diary, container, false);
             var activity = Activity as App;
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Visible;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar_App).Visibility = ViewStates.Visible;
             activity.FindViewById<TextView>(Resource.Id.header_label).Text = "TODAY";
 
 
@@ -59,9 +62,23 @@ namespace CaloRead
             LunchCalories = view.FindViewById<TextView>(Resource.Id.TV_Calories_Lunch);
             DinnerCalories = view.FindViewById<TextView>(Resource.Id.TV_Calories_Dinner);
 
+            //POPULATE VIEWS
 
+            Dictionary<string, string> nutritionalData = DiaryControl.GetAllNutrition(activity.uname, activity.date);
+            CalorieGoal.Text = activity.goal.ToString();
+            CalorieIntake.Text = nutritionalData["totalCalories"];
+            CalorieDeficit.Text = (activity.goal - float.Parse(nutritionalData["totalCalories"])).ToString("n2");
+            MacroProtein.Text = nutritionalData["percentProtein"];
+            MacroCarbs.Text = nutritionalData["percentCarbs"];
+            MacroFat.Text = nutritionalData["percentFat"];
+            BreakfastCalories.Text = nutritionalData["totalBreakfast"];
+            LunchCalories.Text = nutritionalData["totalLunch"];
+            DinnerCalories.Text = nutritionalData["totalDinner"];
 
             //BUTTONS
+
+            
+
             viewBreakfast = view.FindViewById<LinearLayout>(Resource.Id.LL_Breakfast);
             viewBreakfast.Click += (s, e) =>
             {
@@ -79,19 +96,19 @@ namespace CaloRead
             };
             return view;
         }
-
-        public void RefreshNutrionStats(App activity)
+        public void RefreshData(App activity)
         {
+            Dictionary<string, string> nutritionalData = DiaryControl.GetAllNutrition(activity.uname, activity.date);
             CalorieGoal.Text = activity.goal.ToString();
-            MacroFat.Text = activity.currFat.ToString();
-            MacroCarbs.Text = activity.currCarbs.ToString();
-            MacroProtein.Text = activity.currProtein.ToString();
-        }
-        public void RefreshMealCalories(App activity)
-        {
-            BreakfastCalories.Text = $"{activity.MealBreakfast.MealCalories} KCAL";
-            LunchCalories.Text = $"{activity.MealLunch.MealCalories} KCAL";
-            DinnerCalories.Text = $"{activity.MealDinner.MealCalories} KCAL";
+            CalorieIntake.Text = nutritionalData["totalCalories"];
+            CalorieDeficit.Text = (activity.goal - float.Parse(nutritionalData["totalCalories"])).ToString("n2");
+            MacroProtein.Text = nutritionalData["percentProtein"];
+            MacroCarbs.Text = nutritionalData["percentCarbs"];
+            MacroFat.Text = nutritionalData["percentFat"];
+            BreakfastCalories.Text = nutritionalData["totalBreakfast"];
+            LunchCalories.Text = nutritionalData["totalLunch"];
+            DinnerCalories.Text = nutritionalData["totalDinner"];
         }
     }
+    
 }

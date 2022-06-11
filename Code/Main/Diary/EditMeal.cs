@@ -74,7 +74,7 @@ namespace CaloRead
             View view = inflater.Inflate(Resource.Layout.EditMeal, container, false);
             var activity = Activity as App;
             activity.FindViewById<LinearLayout>(Resource.Id.header).Visibility = ViewStates.Visible;
-            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar).Visibility = ViewStates.Gone;
+            activity.FindViewById<ImageButton>(Resource.Id.BTN_Calendar_App).Visibility = ViewStates.Gone;
 
             #region INITIALIZE VARIABLES
             FoodID = int.Parse(Meal["foodID"]);
@@ -124,7 +124,22 @@ namespace CaloRead
             RemoveBTN = view.FindViewById<Button>(Resource.Id.BTN_Remove_EditMeal);
             RemoveBTN.Click += (s, e) =>
             {
-                MealControl.DeleteMeal(MealID);
+                if (MealControl.DeleteMeal(MealID))
+                {
+                    switch (TypeMeal)
+                    {
+                        case "breakfast":
+                            activity.ChangeFragment(activity.MealBreakfast);
+                            break;
+                        case "lunch":
+                            activity.ChangeFragment(activity.MealLunch);
+                            break;
+                        case "dinner":
+                            activity.ChangeFragment(activity.MealDinner);
+                            break;
+                    }
+                }
+
             };
 
             goBack = view.FindViewById<ImageButton>(Resource.Id.BTN_GoBack_EditMeal);

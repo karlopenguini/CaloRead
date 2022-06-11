@@ -5,36 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/round_corner"
-        android:gravity="center"
-        android:id="@+id/header">
-        <TextView
-            android:text="Text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textColor="@android:color/white"
-            android:textAllCaps="true"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            android:id="@+id/header_label" />
-        <ImageButton
-            android:src="@drawable/Calendar"
-            android:layout_width="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_height="match_parent"
-
-            android:id="@+id/BTN_Calendar"
-            style="@style/Base.Widget.AppCompat.Spinner"/>
-        
-        
-    </LinearLayout>
-    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,5 +49,31 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/round_corner"
+        android:gravity="center"
+        android:clickable="false"
+        android:id="@+id/header">
+        <TextView
+            android:text="Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="24dp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:id="@+id/header_label" />
+        
+        <ImageButton
+            android:src="@drawable/calendar"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/BTN_Calendar_App" />
 
+    </LinearLayout>
 </RelativeLayout>

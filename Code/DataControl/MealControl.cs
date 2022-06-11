@@ -17,10 +17,11 @@ namespace CaloRead
 {
     public static class MealControl
     {
-        public static Meal.MealItem[] GetMeals(string type, string username)
+        static string IP = "192.168.1.2";
+        public static Meal.MealItem[] GetMeals(string type, string username, string date)
         {
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/getmeals.php?type={type}&uname={username}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getmeals.php?type={type}&uname={username}&date={date}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
 
@@ -37,8 +38,6 @@ namespace CaloRead
 
             foreach (JsonElement meal in root.EnumerateArray())
             {
-                string date = meal.GetProperty("date").ToString();
-
                 int foodID = int.Parse(meal.GetProperty("foodID").ToString());
                 int mealID = int.Parse(meal.GetProperty("mealID").ToString());
                 float servings = float.Parse(meal.GetProperty("servings").ToString());
@@ -62,10 +61,25 @@ namespace CaloRead
             }
             return mealitems.ToArray();
         }
-
+        public static bool AddMeal(int foodID, string username, float servings, string type, string date)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/addmeal.php?foodID={foodID}&uname={username}&servings={servings}&type={type}&date={date}");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            String res = reader.ReadToEnd();
+            response.Close();
+            if (res.Contains("Data Inserted"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private static string _GetFood(int foodID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/searchfood.php?foodID={foodID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/searchfood.php?foodID={foodID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -76,7 +90,7 @@ namespace CaloRead
         }
         private static string _GetMeal(int mealID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/getmeal.php?mealID={mealID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getmeal.php?mealID={mealID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             String res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -125,12 +139,14 @@ namespace CaloRead
         }
         public static bool DeleteMeal(int mealID)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/removemeal.php?mealID={mealID}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/removemeal.php?mealID={mealID}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
+            response.Close();
             if (res.Contains("Data Removed"))
             {
+                
                 return true;
             }
             else
@@ -140,10 +156,11 @@ namespace CaloRead
         }
         public static bool UpdateMeal(int mealID, float servings)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://192.168.1.6/caloread/editmeal.php?mealID={mealID}&servings={servings}");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/editmeal.php?mealID={mealID}&servings={servings}");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             String res = reader.ReadToEnd();
+            response.Close();
             if (res.Contains("Data Updated"))
             {
                 return true;
@@ -152,6 +169,38 @@ namespace CaloRead
             {
                 return false;
             }
+        }
+        public static List<KeyValuePair<string,int>> GetAvailableFood(string username)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"http://{IP}/caloread/getavailablefood.php?uname={username}");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            String res = response.ProtocolVersion.ToString();
+
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            var result = reader.ReadToEnd();
+
+            response.Close();
+
+            using JsonDocument doc = JsonDocument.Parse(result);
+            JsonElement root = doc.RootElement;
+
+
+            var foods = root;
+
+
+            List<KeyValuePair<string, int>> AvailableFood = new List<KeyValuePair<string, int>>();
+            foreach (JsonElement food in foods.EnumerateArray())
+            {
+                AvailableFood.Add(
+                    new KeyValuePair<string, int>
+                    (
+                        food.GetProperty("foodname").ToString(),
+                        int.Parse(food.GetProperty("foodID").ToString())
+                    )
+                );
+            }
+
+            return AvailableFood;
         }
     }
 }
