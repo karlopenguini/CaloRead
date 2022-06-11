@@ -133,16 +133,16 @@ namespace CaloRead
 
         public class FoodItemsAdapter : RecyclerView.Adapter
         {
-            public FoodItems mMealItems;
+            public FoodItems mFoodItems;
 
             public FoodItemsAdapter(FoodItems mealItems)
             {
-                mMealItems = mealItems;
+                mFoodItems = mealItems;
             }
 
             public override int ItemCount
             {
-                get { return mMealItems.NumMeals; }
+                get { return mFoodItems.NumMeals; }
             }
 
             void OnClick(int position)
@@ -159,12 +159,12 @@ namespace CaloRead
                 FoodItemHolder vh = holder as FoodItemHolder;
 
 
-                vh.FoodName.Text = mMealItems[position].FoodName;
-                vh.Calories.Text = mMealItems[position].Calories.ToString();
-                vh.TotalGrams.Text = mMealItems[position].TotalGrams.ToString();
-                vh.Protein.Text = mMealItems[position].Protein.ToString();
-                vh.Carbs.Text = mMealItems[position].Carbs.ToString();
-                vh.Fat.Text = mMealItems[position].Fat.ToString();
+                vh.FoodName.Text = mFoodItems[position].FoodName;
+                vh.Calories.Text = mFoodItems[position].Calories.ToString();
+                vh.TotalGrams.Text = mFoodItems[position].TotalGrams.ToString();
+                vh.Protein.Text = mFoodItems[position].Protein.ToString();
+                vh.Carbs.Text = mFoodItems[position].Carbs.ToString();
+                vh.Fat.Text = mFoodItems[position].Fat.ToString();
             }
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
