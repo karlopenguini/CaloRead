@@ -19,6 +19,19 @@ namespace CaloRead
 
         ImageButton edit, confirm, cancel;
 
+        #region VARIABLES
+        string Username;
+
+        private Dictionary<string, string> User;
+
+        string Password;
+        float Weight;
+        float Height;
+        string Gender;
+        int Age;
+        float Calorie_goal;
+        #endregion
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -36,7 +49,18 @@ namespace CaloRead
 
             View view = inflater.Inflate(Resource.Layout.Profile, container, false);
 
-            // Instantiate Widgets
+            User = AccountControl.GetUserData(activity.uname);
+
+            #region INITIALIZE VARIABLES
+            Password = User["password"];
+            Weight = float.Parse(User["weight"]);
+            Height = float.Parse(User["height"]);
+            Gender = User["gender"];
+            Age = int.Parse(User["age"]);
+            Calorie_goal = float.Parse(User["calorie_goal"]);
+            #endregion
+
+            #region INITIALIZE VIEWS
             username = view.FindViewById<TextView>(Resource.Id.TV_UserDisplay_Profile);
             password = view.FindViewById<EditText>(Resource.Id.ET_Password_Profile);
             weight = view.FindViewById<EditText>(Resource.Id.ET_Weight_Profile);
@@ -48,6 +72,7 @@ namespace CaloRead
             edit = view.FindViewById<ImageButton>(Resource.Id.BTN_Edit_Profile);
             confirm = view.FindViewById<ImageButton>(Resource.Id.BTN_Confirm_Profile);
             cancel = view.FindViewById<ImageButton>(Resource.Id.BTN_Cancel_Profile);
+            #endregion
 
             // Display username
             username.Text = activity.uname;
@@ -57,7 +82,12 @@ namespace CaloRead
             cancel.Visibility = ViewStates.Gone;
             edit.Visibility = ViewStates.Visible;
 
+            #region POPULATE VIEWS
+            LoadUserData();
+            #endregion
 
+
+            // BUTTONS
             edit.Click += (s, e) =>
             {
                 BTN_Edit_Profile_Click();
@@ -120,7 +150,12 @@ namespace CaloRead
 
         private void LoadUserData()
         {
-            // Populate EditTexts with user data
+            password.Text = Password.ToString();
+            weight.Text = Weight.ToString();
+            height.Text = Height.ToString();
+            gender.Text = Gender.ToString();
+            age.Text = Age.ToString();
+            calorie_goal.Text = Calorie_goal.ToString();
         }
     }
 }
