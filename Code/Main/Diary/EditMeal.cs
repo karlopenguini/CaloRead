@@ -24,7 +24,7 @@ namespace CaloRead
         EditText servings;
         Button UpdateBTN;
         Button RemoveBTN;
-
+        List<EditText> Fields = new List<EditText>();
         #region VARIABLES
         int FoodID = 0;
         int MealID = 0;
@@ -119,7 +119,17 @@ namespace CaloRead
             UpdateBTN = view.FindViewById<Button>(Resource.Id.BTN_Update_EditMeal);
             UpdateBTN.Click += (s, e) =>
             {
-                MealControl.UpdateMeal(MealID, Servings);
+                CheckFields();
+
+                if (Fields.Count == 0)
+                {
+                    MealControl.UpdateMeal(MealID, Servings);
+                }
+                else
+                {
+                    DisplayError();
+                }
+                
             };
             RemoveBTN = view.FindViewById<Button>(Resource.Id.BTN_Remove_EditMeal);
             RemoveBTN.Click += (s, e) =>
@@ -160,6 +170,25 @@ namespace CaloRead
             };
             return view;
         }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if (servings.Text == "" || float.Parse(servings.Text) <= 0)
+            {
+                Fields.Add(servings);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach (EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
+        }
+
         private void RefreshData(float _Servings)
         {
             if (_Servings != null)

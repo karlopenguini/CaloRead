@@ -22,6 +22,7 @@ namespace CaloRead
         EditText protein;
         EditText carbs;
         EditText fat;
+        List<EditText> Fields = new List<EditText>();
         private string Type;
         int selectedFoodID;
         List<KeyValuePair<string, int>> AvailableFood;
@@ -92,22 +93,32 @@ namespace CaloRead
             Add = view.FindViewById<Button>(Resource.Id.BTN_Add_AddMeal);
             Add.Click += (s, e) =>
             {
-                if (MealControl.AddMeal(selectedFoodID, activity.uname, float.Parse(Servings.Text), Type, activity.date))
-                {
-                    switch (Type)
-                    {
-                        case "breakfast":
+                CheckFields();
 
-                            activity.ChangeFragment(activity.MealBreakfast);
-                            break;
-                        case "lunch":
-                            activity.ChangeFragment(activity.MealLunch);
-                            break;
-                        case "dinner":
-                            activity.ChangeFragment(activity.MealDinner);
-                            break;
+                if (Fields.Count == 0)
+                {
+                    if (MealControl.AddMeal(selectedFoodID, activity.uname, float.Parse(Servings.Text), Type, activity.date))
+                    {
+                        switch (Type)
+                        {
+                            case "breakfast":
+
+                                activity.ChangeFragment(activity.MealBreakfast);
+                                break;
+                            case "lunch":
+                                activity.ChangeFragment(activity.MealLunch);
+                                break;
+                            case "dinner":
+                                activity.ChangeFragment(activity.MealDinner);
+                                break;
+                        }
                     }
                 }
+                else
+                {
+                    DisplayError();
+                }
+                
 
             };
 
@@ -151,6 +162,24 @@ namespace CaloRead
         {
             HideKeyboard();
             base.OnStop();
+        }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if (Servings.Text == "" || float.Parse(Servings.Text) <= 0)
+            {
+                Fields.Add(Servings);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach (EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
         }
 
         private void HideKeyboard()
