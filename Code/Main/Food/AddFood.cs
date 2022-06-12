@@ -17,7 +17,8 @@ namespace CaloRead
         ImageButton goBack;
         EditText kcal, protein, carbs, fats, name, grams;
         Button add;
-        string username;
+
+        List<EditText> Fields = new List<EditText>();
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,18 +55,71 @@ namespace CaloRead
 
             add.Click += (s, e) =>
             {
-                if (FoodControl.Add(activity.uname.ToString(), float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                CheckFields();
+
+                if (Fields.Count == 0)
                 {
-                    activity.ShowMessage("Food Added!");
-                    activity.ChangeFragment(activity.food);
+                    if (FoodControl.Add(activity.uname.ToString(), float.Parse(kcal.Text), float.Parse(protein.Text), float.Parse(carbs.Text), float.Parse(fats.Text), name.Text, float.Parse(grams.Text)))
+                    {
+                        activity.ShowMessage("Food Added!");
+                        activity.ChangeFragment(activity.food);
+                    }
+                    else
+                    {
+                        activity.ShowMessage("Unable to Add Food!");
+                    }
                 }
                 else
                 {
-                    activity.ShowMessage("Unable to Add Food!");
+                    DisplayError();
                 }
+                
             };
 
             return view;
+        }
+
+        protected void CheckFields()
+        {
+            Fields.Clear();
+
+            if (kcal.Text == "" || float.Parse(kcal.Text) <= 0)
+            {
+                Fields.Add(kcal);
+            }
+
+            if (protein.Text == "" || float.Parse(protein.Text) <= 0)
+            {
+                Fields.Add(protein);
+            }
+
+            if (carbs.Text == "" || float.Parse(carbs.Text) <= 0)
+            {
+                Fields.Add(carbs);
+            }
+
+            if (fats.Text == "" || float.Parse(fats.Text) <= 0)
+            {
+                Fields.Add(fats);
+            }
+
+            if (name.Text == "")
+            {
+                Fields.Add(name);
+            }
+
+            if (grams.Text == "" || float.Parse(grams.Text) <= 0)
+            {
+                Fields.Add(grams);
+            }
+        }
+
+        protected void DisplayError()
+        {
+            foreach (EditText field in Fields)
+            {
+                field.Error = "Please enter a valid value";
+            }
         }
     }
 }
