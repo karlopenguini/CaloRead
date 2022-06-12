@@ -63,6 +63,7 @@ namespace CaloRead
                     {
                         activity.ShowMessage("Food Added!");
                         activity.ChangeFragment(activity.food);
+                        
                     }
                     else
                     {
@@ -73,7 +74,14 @@ namespace CaloRead
                 {
                     DisplayError();
                 }
-                
+
+                kcal.Text = "";
+                protein.Text = "";
+                carbs.Text = "";
+                fats.Text = "";
+                name.Text = "";
+                grams.Text = "";
+
             };
 
             return view;
