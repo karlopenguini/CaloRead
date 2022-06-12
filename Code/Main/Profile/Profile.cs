@@ -16,7 +16,7 @@ namespace CaloRead
     {
         EditText password, weight, height, gender, age, calorie_goal;
         TextView username;
-
+        Button BTN_Logout;
         ImageButton edit, confirm, cancel;
         List<EditText> Fields = new List<EditText>();
 
@@ -119,7 +119,16 @@ namespace CaloRead
                 BTN_Cancel_Profile_Click();
             };
 
+            BTN_Logout = view.FindViewById<Button>(Resource.Id.BTN_LOGOUT);
+            BTN_Logout.Click += (s, e) =>
+            {
+                Intent i = new Intent(activity, typeof(MainActivity));
+                StartActivity(i);
+            };
+
             return view;
+
+            
         }
 
         private void BTN_Edit_Profile_Click()

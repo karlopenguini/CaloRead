@@ -222,6 +222,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
+                        android:inputType="text"
                         android:enabled="false"
                         android:textFontWeight="200"
                         android:backgroundTint="@color/colorSpanishVeridian"
@@ -295,7 +296,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:enabled="false"
                         android:textFontWeight="200"
                         android:maxLines="1"
@@ -304,6 +305,13 @@
                         android:id="@+id/ET_CalorieGoal_Profile"/>
                 </LinearLayout>
             </LinearLayout>
+            <Button
+                android:text="LOGOUT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF0000"
+                android:id="@+id/BTN_LOGOUT" />
+
         </LinearLayout>
 
     </LinearLayout>
